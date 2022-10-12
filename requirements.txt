@@ -1,0 +1,10 @@
+altgraph==0.17.2
+asgiref==3.5.2
+Django==4.1
+future==0.18.2
+pefile==2022.5.30
+pyinstaller==5.3
+pyinstaller-hooks-contrib==2022.8
+pywin32-ctypes==0.2.0
+sqlparse==0.4.2
+tzdata==2022.2
