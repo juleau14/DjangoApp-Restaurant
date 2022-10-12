@@ -1,0 +1,296 @@
+@font-face{
+    font-family:main_font;
+    src:url(fonts/Lobster-Regular.ttf)
+}
+@keyframes apparition{
+    from{
+        opacity:0
+    }
+    to{
+        opacity:100%
+    }
+}
+@keyframes slideup{
+    from{
+        margin-top:100vh;
+        opacity:0
+    }
+    to{
+        margin-top:50vh;
+        opacity:100%
+    }
+}
+@keyframes slidedown{
+    from{
+        margin-top:0;
+        opacity:0
+    }
+    to{
+        margin-top:50vh;
+        opacity:100%
+    }
+}
+html{
+    background-image:url(media/index_background.png);
+    background-size:cover;
+    background-attachment:fixed;
+    scroll-behavior:smooth;
+    margin:0
+}
+body{
+    margin:0
+}
+a{
+    text-decoration:inherit
+}
+.topnav{
+    animation-duration:1s;
+    animation-name:apparition;
+    overflow:hidden;
+    background-color:#060b13;
+    height:100px;
+    width:100%;
+    border-color:#fff;
+    position:fixed;
+    top:0
+}
+.topnav .nav{
+    display:block;
+    float:right;
+    text-decoration:inherit;
+    color:#fff;
+    font-family:main_font;
+    font-weight:700;
+    font-size:1.5em;
+    height:100%;
+    padding-top:30px;
+    padding-right:2%;
+    padding-left:2%;
+    transition:.2s
+}
+.topnav img{
+    height:100%
+}
+.topnav a:hover{
+    background-color:#fff;
+    color:#000
+}
+.void{
+    height:100vh;
+    text-align:center
+}
+.welcome_text{
+    animation-name:slideup;
+    animation-duration:1s;
+    margin-top:50vh;
+    margin-left:auto;
+    margin-right:auto;
+    display:inline-block;
+    font-family:main_font;
+    color:#fff;
+    font-size:4em
+}
+.low_content{
+    margin:0
+}
+.home_text_div{
+    background-color:#fff;
+    width:100%;
+    text-align:center;
+    margin:0
+}
+.home_text_title{
+    font-family:main_font;
+    font-weight:700;
+    font-size:3em;
+    padding-top:2vh
+}
+.home_text_par{
+    font-family:main_font;
+    font-weight:700;
+    font-size:2em;
+    color:#060b13;
+    padding-bottom:3vh;
+    margin:0 10%
+}
+.contacts_div{
+    width:50%;
+    height:50vw;
+    margin:0;
+    float:right;
+    background-color:#fff;
+    border-top:solid #000 1px
+}
+.contacts_title{
+    font-family:main_font;
+    font-size:3em;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:5%;
+    text-align:center;
+    width:50%;
+    border-bottom:solid
+}
+.contacts_elements{
+    list-style-type:none;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:0;
+    padding:10%;
+    width:50%;
+    font-family:main_font;
+    font-size:2em
+}
+.contacts_elements li{
+    margin-top:10%;
+    margin-bottom:10%
+}
+.poivrons_div{
+    display:flex;
+    width:50%;
+    height:50vw;
+    align-items:center;
+    justify-content:center;
+    margin:0;
+    float:left;
+    background-color:#fff;
+    border-top:solid #000 1px
+}
+.img_poivrons{
+    width:100%;
+    height:100%;
+    margin:0
+}
+@media all and (max-width:1200px){
+    .contacts_div{
+        width:100%;
+        height:auto;
+        float:none;
+        margin:0;
+        border:none;
+        padding-bottom:5vh
+    }
+    .contacts_title{
+        margin-top:0
+    }
+    .contacts_elements{
+        margin-bottom:0
+    }
+    .poivrons_div{
+        float:none;
+        width:100%;
+        height:100vw;
+        border:none
+    }
+    .img_poivrons{
+        width:80vw;
+        height:80vw
+    }
+}
+.map_div{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    float:left;
+    width:50%;
+    height:50vw;
+    background-color:#fff
+}
+.map{
+    width:80%;
+    height:80%
+}
+.melba_div{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    float:right;
+    width:50%;
+    height:50vw;
+    background-color:#fff
+}
+.img_melba{
+    width:100%;
+    height:100%
+}
+@media all and (max-width:1200px){
+    .map_div{
+        float:none;
+        width:100%;
+        height:100vw
+    }
+    .map{
+        width:70vw;
+        height:70vw
+    }
+    .melba_div{
+        float:none;
+        width:100%;
+        height:100vw
+    }
+    .img_melba{
+        width:80vw;
+        height:80vw
+    }
+}
+.moules_div{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    float:left;
+    width:50vw;
+    height:50vw;
+    background-color:#fff
+}
+.img_moules{
+    width:100%;
+    height:100%
+}
+.prices_div{
+    float:right;
+    width:50vw;
+    height:50vw;
+    background-color:#fff
+}
+.prices_title{
+    font-family:main_font;
+    font-size:3em;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:5%;
+    text-align:center;
+    width:50%;
+    border-bottom:solid
+}
+.prices_text{
+    font-family:main_font;
+    font-size:1.5em;
+    width:50%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:10%;
+    padding-left:10%;
+    padding-bottom:5%;
+    border-left:solid;
+    border-bottom:solid
+}
+@media all and (max-width:1200px){
+    .moules_div{
+        float:none;
+        width:100%;
+        height:100vw
+    }
+    .img_moules{
+        width:80vw;
+        height:80vw
+    }
+    .prices_div{
+        float:none;
+        width:100%;
+        height:auto;
+        padding-bottom:10vh
+    }
+    .prices_title{
+        margin-top:0
+    }
+}

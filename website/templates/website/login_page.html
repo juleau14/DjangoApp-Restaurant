@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>L'air de famille</title>
+        <link rel="stylesheet" href="{% static 'website/style_login_page.css' %}">
+    </head>
+    <body>
+        
+        <a href="{% url 'reservation-page' %}" class="back_button">Retour</a>
+
+        <div class="top">
+            <h1 class="title">Connexion</h1>
+        </div>
+
+        <p class="message">{{ message }}</p>
+        
+        <form action="", method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Se connecter" class="connexion_button">
+        </form>
+
+    </body>
+</html>

@@ -1,0 +1,126 @@
+@font-face {
+	font-family: "main_font";
+	src:  url("fonts/Lobster-Regular.ttf");
+}
+
+html {
+    padding: 0;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    min-width: 1000px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.top {
+    background-color: #060b13;
+
+    width: 100%;
+    min-width: 1000px;
+   
+    font-family: main_font;
+    color: white;
+    text-align: center;
+    
+    margin: 0;
+    
+    padding: 30px 0;
+}
+
+.title {
+    margin: 0;
+}
+
+
+.back_button {
+    position: absolute;
+
+    color: white;
+    font-family: main_font;
+    font-size: 20px;
+    border: solid white 3px;
+
+    transition: 0.2s;
+
+    margin-top: 20px;
+    margin-left: 50px;
+    padding: 10px;
+}
+
+.back_button:hover {
+    color: #060b13;
+    background-color: white;
+}
+
+
+form {
+    font-family: main_font;
+    margin-left: auto;
+    margin-right: auto;
+
+    background-color: #060b13;
+    color: white;
+
+    padding: 50px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+
+    width: 600px;
+    height: 400px;
+
+    font-size: 30px;
+}
+
+textarea {
+    height: 250px;
+    background-color: #060b13;
+    border: solid white 3px;
+    font-family: main_font;
+    color: white;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+input {
+
+    height: 30px;
+    width: 250px;
+
+    margin-left: 100px;
+
+    background-color: #060b13;
+    border: solid white 3px;
+
+    border-top: solid #060b13 3px;
+    border-bottom: solid white 3px;
+    border-left: solid #060b13 3px;
+    border-right: solid #060b13 3px;
+
+    color: white;
+
+    font-family: main_font;
+
+    transition: 0.2s;
+}
+
+input:hover, input:focus {
+    border: solid white 3px;
+}
+
+input[type=submit] {
+    font-size: 20px;
+}
+
+
+
+
+

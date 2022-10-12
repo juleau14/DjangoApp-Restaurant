@@ -1,0 +1,87 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="{% static 'website/style_home.css' %}"/>
+	<title></title>
+</head>
+<body>
+	
+	<div class="topnav">
+		<a href="#formules_nav" class="nav">Formules</a>
+		<a href="#contact_nav" class="nav">Contact</a>
+		<a href="{% url 'reservation-page' %}" class="nav">Réserver</a>
+		<a href="#top"><img src="{% static "website/media/logo.jpg" %}"/></a>
+	</div>
+	<div id="top"></div>
+	<div class="void">
+		<h1 class="welcome_text">Bienvenue à l'Air de famille</h1> 
+	</div>
+	
+	<div class="low_content">
+		
+		<div class="home_text_div">
+			<h1 class="home_text_title">"EN FAMILLE, COMME A LA MAISON !..."</h1>
+			<p class="home_text_par">
+				La famille, c’est important, même et surtout quand elle 
+				est aussi étendue et fidèle que la clientèle de Georges 
+				Camuzet, chef et maître de maison rassembleur et proche 
+				de son terroir. Menus 25 € le midi, 38 € le soir, autour 
+				d’une cause commune: partage, bonne croque et bon vin, 
+				produits d’ici et manières d’aujourd’hui à forte valeur 
+				traditionnelle. Georges Camuzet travaille sur le marché 
+				de saison, aussi à l’aise avec le thon de Méditerranée 
+				qu’avec l’agneau du Quercy, les asperges sauce mousseline 
+				ou le canard du Sud-Ouest, le foie gras excellent ou la 
+				pintade et risotto. À la cave, tous les copains, Le Roc, 
+				Da Ros, Pacalet, Barroubio…
+			</p>
+		</div>
+		
+		<div class="poivrons_div">
+			<img class="img_poivrons" src="{% static 'website/media/poivrons.jpg' %}" alt="poivrons">
+		</div>
+			
+		<div class="contacts_div">
+			<div id="contact_nav"></div>
+			<h1 class="contacts_title">Nous contacter :</h1>
+			<ul class="contacts_elements">
+				<li>Tél.: 06.00.00.00.00</li>
+				<li>Mail : airdefamille@gmail.com</li>
+				<li>Instagram : @airdefamille</li>
+				<li>Adresse : 6 rue Jules Chalande</li>
+			</ul>
+		</div>
+
+		<div class="map_div">
+			<iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.209634858104!2d1.4420166157146945!3d43.602176563746234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebdf0993f420f%3A0xcb6f682aa03559c7!2sL&#39;%20Air%20de%20Famille!5e0!3m2!1sfr!2sfr!4v1663783805503!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+		</div>
+		
+		<div class="melba_div">
+			<img class="img_melba" src="{% static 'website/media/melba.jpg' %}" alt="">
+		</div>
+
+		<div class="moules_div">
+			<img class="img_moules" src="{% static 'website/media/moules.jpg' %}" alt="">
+		</div>
+
+		<div class="prices_div">
+			<div id="formules_nav"></div>
+			<h1 class="prices_title">Nos formules :</h1>
+			<p class="prices_text">
+				Le Midi :<br><br>
+				- <br>
+				- <br>
+				- <br><br><br>
+				Le Soir : <br><br>
+				- <br>
+				- <br>
+				-
+			</p>
+		</div>
+
+	</div>
+</body>
+</html>
