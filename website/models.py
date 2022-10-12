@@ -1,7 +1,7 @@
-from email.policy import default
-from importlib.metadata import requires
+
 from multiprocessing.sharedctypes import Value
 from secrets import choice
+from wsgiref.validate import validator
 from xml.parsers.expat import model
 from django.db import models
 import django.utils.timezone
@@ -36,9 +36,9 @@ class Reservation(models.Model):
         ('2', 'Refusé'),
     ]
 
-    name = models.fields.CharField(max_length=20)
-    mail = models.fields.EmailField(max_length=100)
-    phone_number = models.fields.CharField(max_length=10, default="")
+    name = models.fields.CharField(max_length=20, validators=[MaxLengthValidator(20)])
+    mail = models.fields.EmailField(max_length=100, validators=[MaxLengthValidator(100)])
+    phone_number = models.fields.CharField(max_length=10, default="", validators=[MaxLengthValidator(10), MinLengthValidator(10)])
     
     nb_people = models.fields.CharField(max_length=2, default=1, choices=NB_PEOPLE_CHOICES)
     resa_date = models.fields.DateField(default=django.utils.timezone.now)
