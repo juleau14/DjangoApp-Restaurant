@@ -1,0 +1,120 @@
+@font-face {
+	font-family: "main_font";
+	src:  url("fonts/Lobster-Regular.ttf");
+}
+
+@keyframes slideright {
+    from {
+        margin-left: -50%;
+    }
+
+    to {
+        margin-left: 500px;
+    }
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    min-width: 1000px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.top {
+    background-color: #060b13;
+
+    width: 100%;
+    min-width: 1000px;
+   
+    font-family: main_font;
+    color: white;
+    text-align: center;
+    
+    margin: 0;
+    
+    padding: 30px 0;
+}
+
+.title {
+    margin: 0;
+}
+
+
+.back_button {
+    position: absolute;
+
+    color: white;
+    font-family: main_font;
+    font-size: 20px;
+    border: solid white 3px;
+
+    transition: 0.2s;
+
+    margin-top: 20px;
+    margin-left: 50px;
+    padding: 10px;
+}
+
+.back_button:hover {
+    color: #060b13;
+    background-color: white;
+}
+
+.message {
+    margin-left: 500px;
+
+    position: absolute;
+    font-family: main_font;
+    color: red;
+    font-size: 30px;
+
+    animation-name: slideright;
+    animation-duration: 1s;
+}
+
+
+form {
+    background-color: #060b13;
+
+    color: white;
+    font-family: main_font;
+    font-size: 20px;
+
+    width: 600px;
+    max-width: 600px;
+    height: 300px;
+    max-height: 300px;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 90px;
+
+    text-align: center;
+}
+
+input {
+    margin-top: 40px;
+
+    font-family: main_font;
+    font-size: 20px;
+    color: white;
+
+    background-color: #060b13;
+
+    border-top: solid #060b13 3px;
+    border-bottom: solid white 3px;
+    border-left: solid #060b13 3px;
+    border-right: solid #060b13 3px;
+
+    transition: 0.2s;
+}
+
+input:hover {
+    border: solid white 3px;
+}

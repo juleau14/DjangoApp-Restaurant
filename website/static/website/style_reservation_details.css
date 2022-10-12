@@ -1,0 +1,85 @@
+@font-face {
+	font-family: "main_font";
+	src:  url("fonts/Lobster-Regular.ttf");
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    min-width: 1200px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.top {
+    background-color: #060b13;
+
+    width: 100%;
+    min-width: 1000px;
+   
+    font-family: main_font;
+    color: white;
+    text-align: center;
+    
+    margin: 0;
+    
+    padding: 30px 0;
+}
+
+.title {
+    margin: 0;
+}
+
+
+.back_button {
+    position: absolute;
+
+    color: white;
+    font-family: main_font;
+    font-size: 20px;
+    border: solid white 3px;
+
+    transition: 0.2s;
+
+    margin-top: 20px;
+    margin-left: 50px;
+    padding: 10px;
+}
+
+.back_button:hover {
+    color: #060b13;
+    background-color: white;
+}
+
+.info_list {
+    list-style-type: none;
+
+    font-family: main_font;
+    font-size: x-large;
+    width: 700px;
+
+    border: solid #060b13 3px;
+
+    background-color: #060b13;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+}
+
+.info {
+    padding: 0.7em 0;
+    color: white;
+}
+
+.edit_button {
+    border: solid white 1px;
+    float: right;
+    margin-right: 30px;
+    padding: 5px;
+}

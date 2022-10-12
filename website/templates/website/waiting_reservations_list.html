@@ -1,0 +1,73 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>L'air de famille</title>
+        <link rel="stylesheet" href="{% static 'website/style_waiting_reservations_list.css' %}">
+    </head>
+    <body>
+        
+        <div class="top">
+            <h1 class="title">Page administrateur</h1>
+        </div>
+        
+        <div class="nav_button_div">
+            <a href="{% url 'accepted-reservations' %}" class="nav_button">Réservations acceptées</a>
+            <a href="{% url 'refused-reservations' %}" class="nav_button">Réservations refusées</a>
+            <a href="{% url 'clients-list' %}" class="nav_button">Liste des clients</a>
+            <a href="{% url 'display-holidays' %}" class="nav_button">Vacances</a>
+            <a href="{% url 'display-full-services' %}" class="nav_button">Services complets</a>
+            <a href="{% url 'logout' %}" class="nav_button">Déconnexion</a>
+        </div>
+
+        <div class="decoration_div_1"></div>
+
+        <div class="filters_div">
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ form }}
+                <input type="submit" value="Appliquer">
+            </form>
+        </div>
+
+        <div class="reset_filters_button_div">
+            <a class="reset_filters_button" href="{% url 'display-reservations-list' %}">Supprimer les filtres</a>
+        </div>
+        
+        <div class="full_list_div">
+            <div class="full_list">
+                    <div class="legend_line">
+                        <p class="legend">Nom</p>
+                        <p class="legend">Date</p>
+                        <p class="legend">Heure</p>
+                        <p class="legend">Nb. Couverts</p>
+                    </div>
+
+                    {% for reservation in reservations %}
+                    
+                    <div class="reservation_line">
+                        <a class="details_button" href="{% url 'display-details' reservation.id %}">
+                            <p class="info">{{ reservation.name }}</p>
+                            <p class="info">{{ reservation.resa_date }}</p>
+                            <p class="info">{{ reservation.get_hour_display }}</p>
+                            <p class="info">{{ reservation.nb_people }}</p>
+                        </a>
+                        <div class="decision_buttons">
+                            <a class="accept_button" href="{% url 'accept-reservation' reservation.id %}">Accepter</a>
+                            <a class="refuse_button" href="{% url 'refuse-reservation' reservation.id %}">Refuser</a>
+                        </div>
+                    </div>
+
+                    {% endfor %}
+                    
+                    {% if message != "" %}
+                        <div class="reservation_line">
+                            <p class="message">{{ message }}</p>
+                        </div>
+                    {% endif %}
+            </div>
+        </div>
+    
+    </body>
+</html>

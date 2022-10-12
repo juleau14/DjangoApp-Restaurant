@@ -1,0 +1,46 @@
+@font-face {
+	font-family: "main_font";
+	src:  url("fonts/Lobster-Regular.ttf");
+}
+
+
+body {
+    background-color: #060b13;
+
+    font-family: main_font;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.text {
+    text-align: center;
+
+    margin-top: 7em;
+
+    font-size: 2em;
+}
+
+
+.back_button {
+    display: inline-block;
+    color: white;
+    font-family: main_font;
+    border: solid white 1px;
+
+    text-align: center;
+
+    margin-left: 3em;
+
+    padding: 0.7em;
+
+    transition: 0.2s;
+}
+
+.back_button:hover {
+    color: #060b13;
+    background-color: white;
+}
