@@ -5,7 +5,6 @@ import datetime
 from email.policy import default
 from pyexpat import model
 from random import choices
-from tkinter import Widget
 from django import forms
 from website.models import Reservation, Client, Holidays, FullService
 
