@@ -131,4 +131,4 @@ EMAIL_FILE_PATH = 'website/mails_files/' # change this to a proper location
 STATICFILES_DIRS = ['/website/static/',]
 
 
-ALLOWED_HOSTS = ['172.104.158.59']
+ALLOWED_HOSTS = ['172.104.158.59', '127.0.0.1']
