@@ -35,7 +35,7 @@ class LoginForm(forms.Form):
     password = forms.fields.CharField(max_length=100, widget=forms.PasswordInput(), label='Mot de passe')
 
 
-class EditCommentForm(forms.ModelForm):
+class EditClientForm(forms.ModelForm):
     class Meta:
         model = Client
         fields = '__all__'
@@ -43,10 +43,11 @@ class EditCommentForm(forms.ModelForm):
         
         labels = {
             "comment": "Commentaire client",
+            "warning": "FDP",
         }
 
     widgets = {
-        'comment': forms.Textarea(attrs={'value': 'comment', 'style':'resize:none;'})
+        'comment': forms.Textarea(attrs={'value': 'comment', 'style':'resize:none;'}),
     }
 
 

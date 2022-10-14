@@ -230,6 +230,21 @@ input::-webkit-calendar-picker-indicator {
     border-bottom: solid #060b13 1px;
 }
 
+.reservation_line_warning {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+    padding: 10px;
+
+    background-color: red;
+
+    min-height: 50px;
+
+    border-bottom: solid #060b13 1px;
+}
+
 .legend_line {
     background-color: #060b13;
     color: white;

@@ -55,6 +55,7 @@ class Client(models.Model):
     phone_number = models.fields.CharField(max_length=10, default='')
     nb_reservations = models.fields.IntegerField(default=0)
     comment = models.fields.TextField(max_length=1000, default='')
+    warning = models.fields.BooleanField(default=False)
 
 
 class Holidays(models.Model):

@@ -4,7 +4,7 @@ from logging import NullHandler
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from website.forms import LoginForm, ReservationForm, EditCommentForm, HolidaysForm, FullServiceForm, FiltersForm
+from website.forms import LoginForm, ReservationForm, EditClientForm, HolidaysForm, FullServiceForm, FiltersForm
 from website.models import Reservation, Client, Holidays, FullService
 from django.core.mail import send_mail
 from django.conf import settings
@@ -241,6 +241,7 @@ def logout_page(request):
 
 @login_required()
 def display_reservations_list(request):
+    Clients = Client.objects.all()
     if request.method == 'POST':
         form = FiltersForm(request.POST)
         
@@ -265,13 +266,13 @@ def display_reservations_list(request):
 
             return render(request,
             'website/waiting_reservations_list.html',
-            {'reservations': filtered_reservations, 'message': message, 'form': form},
+            {'reservations': filtered_reservations, 'clients': Clients, 'message': message, 'form': form},
             )
         
         else:
             return render(request,
             'website/waiting_reservations_list.html',
-            {'reservations': filtered_reservations, 'message': message, 'form': form},
+            {'reservations': filtered_reservations,'clients': Clients, 'message': message, 'form': form},
             )
     
     else:
@@ -284,7 +285,7 @@ def display_reservations_list(request):
 
         return render(request,
         'website/waiting_reservations_list.html',
-        {'reservations': all_reservations, 'message': message, 'form': form},
+        {'reservations': all_reservations, 'clients': Clients, 'message': message, 'form': form},
         )
 
 
@@ -366,12 +367,14 @@ def edit_client(request, id):
 
     if request.method == 'POST':
         
-        form = EditCommentForm(request.POST)
+        form = EditClientForm(request.POST)
         
         if form.is_valid():
             new_comment = form.cleaned_data['comment']
+            new_warning = form.cleaned_data['warning']
             client = Client.objects.get(id=id)
             client.comment = new_comment
+            client.warning = new_warning
             client.save()
 
             return redirect('display-reservations-list')
@@ -383,7 +386,7 @@ def edit_client(request, id):
             )
 
     else:
-        form = EditCommentForm(initial=initial_data)
+        form = EditClientForm(initial=initial_data)
 
         return render(request,
         'website/edit_client.html',
