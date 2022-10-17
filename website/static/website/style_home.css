@@ -1,7 +1,15 @@
 @font-face{
     font-family:main_font;
-    src:url(fonts/Lobster-Regular.ttf)
+    src:url('fonts/Lobster-Regular.ttf')
 }
+
+@media all and (max-width: 1200px) {
+    @font-face {
+        font-family: main_font;
+        src: url('fonts/Bellaty-Scripts.ttf')
+    }
+}
+
 @keyframes apparition{
     from{
         opacity:0
@@ -10,6 +18,7 @@
         opacity:100%
     }
 }
+
 @keyframes slideup{
     from{
         margin-top:100vh;
