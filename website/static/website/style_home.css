@@ -3,13 +3,6 @@
     src:url('fonts/Lobster-Regular.ttf')
 }
 
-@media all and (max-width: 1200px) {
-    @font-face {
-        font-family: main_font;
-        src: url('fonts/Bellaty-Scripts.ttf')
-    }
-}
-
 @keyframes apparition{
     from{
         opacity:0
@@ -301,5 +294,12 @@ a{
     }
     .prices_title{
         margin-top:0
+    }
+}
+
+
+@media all and (max-width: 1200px) {
+    body {
+        font-size: 2em;
     }
 }
