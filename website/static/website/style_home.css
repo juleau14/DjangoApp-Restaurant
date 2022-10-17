@@ -1,5 +1,10 @@
 @font-face{
     font-family:main_font;
+    src:url('fonts/ITC-Modern-No.216-W01-Hv.ttf')
+}
+
+@font-face{
+    font-family:lobster_font;
     src:url('fonts/Lobster-Regular.ttf')
 }
 
@@ -39,6 +44,13 @@ html{
     scroll-behavior:smooth;
     margin:0
 }
+
+@media all and (max-width: 1200px) {
+    html {
+        background-attachment: local;
+    }
+}
+
 body{
     margin:0
 }
@@ -61,7 +73,7 @@ a{
     float:right;
     text-decoration:inherit;
     color:#fff;
-    font-family:main_font;
+    font-family:lobster_font;
     font-weight:700;
     font-size:1.5em;
     height:100%;
@@ -88,7 +100,7 @@ a{
     margin-left:auto;
     margin-right:auto;
     display:inline-block;
-    font-family:main_font;
+    font-family:lobster_font;
     color:#fff;
     font-size:4em
 }
@@ -298,8 +310,7 @@ a{
 }
 
 
-@media all and (max-width: 1200px) {
-    body {
-        font-size: 2em;
-    }
+.bottom {
+    background-color: #060b13;
+    color: white;
 }
