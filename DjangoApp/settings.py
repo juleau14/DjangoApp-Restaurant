@@ -126,8 +126,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL  = '/login/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'office365.com'
-EMAIL_PORT = 587
+EMAIL_HOST = 'smtp-mail.outlook.com'
+EMAIL_PORT = 25
 EMAIL_USE_TLS = True
 #EMAIL_USE_SSL = True
 EMAIL_HOST_USER = 'test_django@outlook.fr'
