@@ -140,7 +140,7 @@ def make_reservation(request):
                 email = EmailMultiAlternatives(
                     subject='Réservation air de famille',
                     body=text_content,
-                    from_email= 'localhost',
+                    from_email= settings.EMAIL_HOST_USER,
                     to=[mail],
                 )
 

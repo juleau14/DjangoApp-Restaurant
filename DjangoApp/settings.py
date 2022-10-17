@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
+from curses.ascii import EM
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -124,8 +125,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_URL  = '/login/'
 
-EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
-EMAIL_FILE_PATH = 'website/mails_files/' # change this to a proper location
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.mail.yahoo.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'test_django@yahoo.com'
+EMAIL_HOST_PASSWORD = 'JuleauTestdjango@10108'
+# EMAIL_FILE_PATH = 'website/mails_files/' # change this to a proper location
 
 
 ALLOWED_HOSTS = ['172.104.158.59', '127.0.0.1']
