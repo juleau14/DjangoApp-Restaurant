@@ -190,10 +190,13 @@ input::-webkit-calendar-picker-indicator {
 
     input, select {
         width: 100%;
+        font-size: 1em;
+        height: 3vh;
     }
 
     form {
         width: 80%;
+        font-size: 3em;
     }
 
     .bottom {
