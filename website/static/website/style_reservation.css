@@ -185,6 +185,12 @@ input::-webkit-calendar-picker-indicator {
     }
 
     form {
-        width: 90%;
+        width: 80%;
+    }
+
+    .bottom {
+        position: fixed;
+
+        bottom: 0;
     }
 }
