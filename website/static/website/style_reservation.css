@@ -97,12 +97,6 @@ a {
 }
 
 
-.form_div {
-    display: flex;
-    align-items: center;
-}
-
-
 form {
     display: flex;
     flex-direction: column;
@@ -191,7 +185,7 @@ input::-webkit-calendar-picker-indicator {
     }
 
     label, input, select {
-        margin-top: 3vh;
+        margin-top: 4vh;
     }
 
     form {

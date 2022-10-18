@@ -15,13 +15,11 @@
         
         <h1 class="error_msg">{{ message }}</h1>
         
-        <div class="form_div">
-            <form action="" method="post">
-                {% csrf_token %}
-                {{ form.as_p }}
-                <input class="send" type="submit" value="Réserver">
-            </form>
-        </div>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input class="send" type="submit" value="Réserver">
+        </form>
 
         <div class="bottom">
             <a href="{% url 'login' %}" class="connection_button">Connexion</a>
