@@ -180,6 +180,10 @@ input::-webkit-calendar-picker-indicator {
 }
 
 @media all and (max-width: 1200px) {
+    .top {
+        height: 100px;
+    }
+
     label, input, select {
         margin-top: 3vh;
     }
