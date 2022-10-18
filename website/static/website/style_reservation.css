@@ -188,7 +188,7 @@ input::-webkit-calendar-picker-indicator {
         margin-top: 4vh;
     }
 
-    input, select {
+    input, select, [type="date"] {
         width: 90%;
         font-size: 1em;
         height: 3vh;
