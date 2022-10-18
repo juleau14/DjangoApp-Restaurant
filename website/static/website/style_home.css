@@ -4,6 +4,11 @@
 }
 
 @font-face{
+    font-family:main_light_font;
+    src:url('fonts/Louis-George-Cafe-Light.ttf')
+}
+
+@font-face{
     font-family:lobster_font;
     src:url('fonts/Lobster-Regular.ttf')
 }
@@ -128,6 +133,14 @@ a{
     padding-bottom:3vh;
     margin:0 10%
 }
+
+@media all and (max-width) {
+    .home_text_par {
+        font-family: main_light_font;
+    }
+}
+
+
 .contacts_div{
     width:50%;
     height:50vw;
