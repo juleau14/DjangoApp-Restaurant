@@ -178,7 +178,7 @@ input::-webkit-calendar-picker-indicator {
 
 @media all and (max-width: 1200px) {
     form {
-        height: 80vh;
-        width: 90vw;
+        font-size: 2em;
+        width: 80vw;
     }
 }
