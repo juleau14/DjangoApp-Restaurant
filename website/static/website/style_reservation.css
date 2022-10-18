@@ -184,8 +184,12 @@ input::-webkit-calendar-picker-indicator {
         height: 100px;
     }
 
-    label, input, select {
+    label {
         margin-top: 4vh;
+    }
+
+    input, select {
+        width: 100%;
     }
 
     form {
