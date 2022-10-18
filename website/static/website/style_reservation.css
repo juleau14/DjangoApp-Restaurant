@@ -189,7 +189,7 @@ input::-webkit-calendar-picker-indicator {
     }
 
     input, select {
-        width: 100%;
+        width: 90%;
         font-size: 1em;
         height: 3vh;
     }
