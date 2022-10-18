@@ -97,6 +97,12 @@ a {
 }
 
 
+.form_div {
+    display: flex;
+    align-items: center;
+}
+
+
 form {
     display: flex;
     flex-direction: column;
