@@ -50,8 +50,9 @@ html{
     margin:0
 }
 
-@media all and (max-width: 1200px) {
+@media all and (max-width: 900px) and (min-height: 1500px) {
     html {
+        background-image: url(media/index_background_phone.jpg);
         background-attachment: local;
     }
 }
