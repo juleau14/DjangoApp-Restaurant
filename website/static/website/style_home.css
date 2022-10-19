@@ -108,7 +108,7 @@ a{
 
 @media all and (max-width: 900px) {
     html {
-        background-image: url(media/index_background_phone.jpg);
+        background-image: url(media/index_background_phone.png);
         background-size: contain;
         background-attachment: inherit;
     }
