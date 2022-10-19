@@ -106,7 +106,7 @@ a{
     font-size:4em
 }
 
-@media all and (max-width: 900px) {
+@media all and (max-width: 1000px) {
     html {
         background-image: url(media/index_background_phone.png);
         background-size: contain;
@@ -137,12 +137,6 @@ a{
     color:white;
     padding-bottom:3vh;
     margin:0 10%
-}
-
-@media all and (max-width) {
-    .home_text_par {
-        font-family: main_light_font;
-    }
 }
 
 
