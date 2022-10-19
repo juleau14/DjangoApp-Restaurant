@@ -97,8 +97,6 @@ a {
     align-items: center;
     width: 100%;
     height: 10vh;
-
-    border: solid red 3px;
 }
 
 .error_msg {
