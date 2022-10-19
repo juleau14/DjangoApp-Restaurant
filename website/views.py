@@ -126,7 +126,7 @@ def make_reservation(request):
                 mail = form.cleaned_data['mail']                    # on récupère le mail du client
                 phone_num = form.cleaned_data['phone_number']       # on récupère le numéro du client
                 
-                html_content = render_to_string("website/confirm_reservation_mail.html",
+                html_content = render_to_string("website/mails/confirm_reservation_mail.html",
                 {'nb_people': nb_people,
                 'name': name,
                 'date_form': date_form,
