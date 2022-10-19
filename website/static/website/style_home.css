@@ -91,8 +91,12 @@ a{
 }
 .void{
     height:100vh;
-    text-align:center
+    text-align:center;
+    display: flex;
+    align-items: center;
 }
+
+
 .welcome_text{
     animation-name:slideup;
     animation-duration:1s;
@@ -112,10 +116,18 @@ a{
         background-size: contain;
         background-attachment: inherit;
     }
+
+    .welcome_text {
+        font-size: 6em;
+    }
+
+    .nav, .topnav {
+        font-size: 1.7em;
+    }
 }
 
 .low_content{
-    margin:0
+    margin:0;
 }
 .home_text_div{
     background-color:#1b3052;
