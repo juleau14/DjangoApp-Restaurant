@@ -264,7 +264,7 @@ input::-webkit-calendar-picker-indicator {
 }
 
 
-.reservation_line:hover {
+.reservation_line:hover, .reservation_line_warning:hover {
     background-color: #060b13;
     color: white;
 }
