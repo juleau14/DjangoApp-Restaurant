@@ -84,16 +84,32 @@ a {
 }
 
 
+@media all and (max-width: 550px) {
+    .back_button {
+        margin-left: 25px;
+    }
+}
+
+
+.error_msg_div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+
+    border: solid red 3px;
+}
+
 .error_msg {
     animation-name: slideright;
     animation-duration: 1s;
 
     font-family: main_font;
+    font-size: 1.5em;
     color: red;
 
     margin-left: 15%;
-
-    position: absolute;
 }
 
 
@@ -108,8 +124,7 @@ form {
     color: white;
 
     padding: 50px;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
+    margin-bottom: 10vh;
 
     width: 50vw;
     height: auto;
@@ -179,7 +194,7 @@ input::-webkit-calendar-picker-indicator {
     margin-bottom: 0;
 }
 
-@media all and (max-width: 1200px) {
+@media all and (max-width: 490px) {
     .top {
         height: 100px;
     }
