@@ -192,7 +192,7 @@ input::-webkit-calendar-picker-indicator {
     margin-bottom: 0;
 }
 
-@media all and (max-width: 490px) {
+@media all and (max-width: 850px) {
     .top {
         height: 100px;
     }
