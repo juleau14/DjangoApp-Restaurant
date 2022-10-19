@@ -44,7 +44,7 @@ class Reservation(models.Model):
     resa_date = models.fields.DateField(default=django.utils.timezone.now)
     hour = models.fields.CharField(max_length=2, choices=HOUR_CHOICES)
 
-    accepted = models.fields.CharField(max_length=1, choices=STATE_CHOICES, default='0')
+    accepted = models.fields.CharField(max_length=1, choices=STATE_CHOICES, default='0') # 0 en attente / 1 acceptée / 2 refusée
 
     def __str__(self):
         return f'{self.name}'
