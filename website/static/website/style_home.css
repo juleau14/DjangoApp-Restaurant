@@ -50,12 +50,6 @@ html{
     margin:0
 }
 
-@media all and (max-width: 900px) and (min-height: 1500px) {
-    html {
-        background-image: url(media/index_background_phone.jpg);
-        background-attachment: local;
-    }
-}
 
 body{
     margin:0
@@ -108,8 +102,18 @@ a{
     display:inline-block;
     font-family:lobster_font;
     color:#fff;
+    text-shadow: 2px 2px 0 #060b13;
     font-size:4em
 }
+
+@media all and (max-width: 900px) {
+    html {
+        background-image: url(media/index_background_phone.jpg);
+        background-size: contain;
+        background-attachment: inherit;
+    }
+}
+
 .low_content{
     margin:0
 }
