@@ -146,7 +146,6 @@ def make_reservation(request):
 
                 email.attach_alternative(html_content, "text/html")
                 email.send()
-                print(email.body)
                 
                 try:                                                                # si le client est déjà venu on ajoute une reservation
                     client = Client.objects.get(phone_number=phone_num)
@@ -302,6 +301,34 @@ def accept_reservation_confirmed(request, id):
     resa.accepted = '1'
     resa.save()
 
+    nb_people = resa.nb_people
+    name = resa.name
+    date_form = resa.resa_date
+    hour = resa.hour
+    phone_num = resa.phone_number
+    mail = resa.mail
+
+    html_content = render_to_string("website/mails/accept_reservation_mail.html",
+                {'nb_people': nb_people,
+                'name': name,
+                'date_form': date_form,
+                'hour': hour,
+                'phone_number': phone_num,
+                },
+                )
+
+    text_content = strip_tags(html_content)
+
+    email = EmailMultiAlternatives(
+        subject='Réservation air de famille',
+        body=text_content,
+        from_email= settings.EMAIL_HOST_USER,
+        to=[mail],
+    )
+
+    email.attach_alternative(html_content, "text/html")
+    email.send()
+
     return redirect('display-reservations-list')
 
 
@@ -317,6 +344,31 @@ def refuse_reservation_confirmed(request, id):
     resa = Reservation.objects.get(id=id)
     resa.accepted = '2'
     resa.save()
+
+    nb_people = resa.nb_people
+    name = resa.name
+    date_form = resa.resa_date
+    hour = resa.hour
+    mail = resa.mail
+
+    html_content = render_to_string("website/mails/refuse_reservation_mail.html",
+                {'nb_people': nb_people,
+                'name': name,
+                'date_form': date_form,
+                'hour': hour}
+                )
+
+    text_content = strip_tags(html_content)
+
+    email = EmailMultiAlternatives(
+        subject='Réservation air de famille',
+        body=text_content,
+        from_email= settings.EMAIL_HOST_USER,
+        to=[mail],
+    )
+
+    email.attach_alternative(html_content, "text/html")
+    email.send()
 
     return redirect('display-reservations-list')
 
