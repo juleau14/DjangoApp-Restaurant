@@ -361,8 +361,10 @@ def display_reservation_details(request, id):
 
 def edit_client(request, id):
     client = Client.objects.get(id=id)
+    
     initial_data = {
         'comment': client.comment,
+        'warning': client.warning,
     }
 
     if request.method == 'POST':

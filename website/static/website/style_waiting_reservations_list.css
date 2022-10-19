@@ -238,7 +238,7 @@ input::-webkit-calendar-picker-indicator {
     align-items: center;
     padding: 10px;
 
-    background-color: red;
+    background-color: rgb(221, 118, 118);
 
     min-height: 50px;
 
