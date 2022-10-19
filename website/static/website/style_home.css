@@ -28,7 +28,6 @@
         opacity:0
     }
     to{
-        margin-top:50vh;
         opacity:100%
     }
 }
@@ -100,7 +99,6 @@ a{
 .welcome_text{
     animation-name:slideup;
     animation-duration:1s;
-    margin-top:50vh;
     margin-left:auto;
     margin-right:auto;
     display:inline-block;
