@@ -82,7 +82,7 @@ form {
     font-size: 30px;
 }
 
-@media all and (max-width:850px) {
+@media all and (max-width:1000px) {
     form {
         width: 70%;
         height: 80%;
