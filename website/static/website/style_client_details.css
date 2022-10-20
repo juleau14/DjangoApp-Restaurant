@@ -71,11 +71,6 @@ a {
     margin-top: 60px;
 }
 
-@media all and (max-width: 1000px) {
-    .info_list {
-        width: 80%;
-    }
-}
 
 .info {
     padding: 0.7em 0;
@@ -87,4 +82,14 @@ a {
     float: right;
     margin-right: 30px;
     padding: 5px;
+}
+
+@media all and (max-width: 1000px) {
+    .info_list {
+        width: 80%;
+    }
+
+    .info {
+        margin-top: 20vh;
+    }
 }
