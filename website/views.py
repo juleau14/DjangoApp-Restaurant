@@ -121,7 +121,7 @@ def make_reservation(request):
             if valid_return == True:                                # on test si la réservation est valide
                 form.save()                                         # si oui on la sauvegarde dans la base de données
                 name = form.cleaned_data['name']                    # on récupère le nom 
-                hour = form.cleaned_data['hour']                    # on récupère l'heure de la resa
+                hour = Reservation.HOUR_TRAD[form.cleaned_data['hour']]                  # on récupère l'heure de la resa
                 nb_people = form.cleaned_data['nb_people']          # on récupère le nb de personnes
                 mail = form.cleaned_data['mail']                    # on récupère le mail du client
                 phone_num = form.cleaned_data['phone_number']       # on récupère le numéro du client
@@ -304,7 +304,7 @@ def accept_reservation_confirmed(request, id):
     nb_people = resa.nb_people
     name = resa.name
     date_form = resa.resa_date
-    hour = resa.hour
+    hour = Reservation.HOUR_TRAD[resa.hour] 
     phone_num = resa.phone_number
     mail = resa.mail
 
@@ -348,7 +348,7 @@ def refuse_reservation_confirmed(request, id):
     nb_people = resa.nb_people
     name = resa.name
     date_form = resa.resa_date
-    hour = resa.hour
+    hour = Reservation.HOUR_TRAD[resa.hour] 
     mail = resa.mail
 
     html_content = render_to_string("website/mails/refuse_reservation_mail.html",
