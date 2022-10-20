@@ -164,6 +164,15 @@ input::-webkit-calendar-picker-indicator {
     label {
         margin-left: 5vw;
     }
+
+    form {
+        font-size: 30px;
+    }
+
+    input {
+        width: 10%;
+        height: 3vh;
+    }
 }
 
 
