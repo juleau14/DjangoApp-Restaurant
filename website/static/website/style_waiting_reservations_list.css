@@ -119,6 +119,7 @@ select {
     font-family: main_font;
 
     border: solid #060b13 3px;
+    color: #060b13;
 
     width: 150px;
 
@@ -130,9 +131,10 @@ input[type=submit] {
     font-family: main_font;
 
     width: 150px;
-    height: 50px;
+    height: 30px;
 
     background-color: white;
+    color: #060b13;
 
     margin-left: 20vh;
 
@@ -142,6 +144,7 @@ input[type=submit] {
 
 input[type=date] {
     font-family: main_font;
+    color: #060b13;
 }
 
 
@@ -157,7 +160,7 @@ input::-webkit-calendar-picker-indicator {
   }
 
 
-@media all and (max-width = 1000px) {
+@media all and (max-width: 1000px) {
     label {
         margin-left: 5vw;
     }
