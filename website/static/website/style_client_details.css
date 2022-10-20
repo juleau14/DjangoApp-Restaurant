@@ -71,7 +71,7 @@ a {
     margin-top: 60px;
 }
 
-@media all and (max-width: 900px) {
+@media all and (max-width: 1000px) {
     .info_list {
         width: 80%;
     }
