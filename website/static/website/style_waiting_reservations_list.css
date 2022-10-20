@@ -160,18 +160,9 @@ input::-webkit-calendar-picker-indicator {
   }
 
 
-@media all and (max-width: 1000px) {
+  @media all and (max-width: 1000px) {
     label {
         margin-left: 5vw;
-    }
-
-    form {
-        font-size: 30px;
-    }
-
-    input {
-        width: 10%;
-        height: 3vh;
     }
 }
 
