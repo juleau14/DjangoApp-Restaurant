@@ -52,6 +52,14 @@ a {
     padding: 10px;
 }
 
+
+@media all and (max-width: 850px) {
+    .back_button {
+        margin-left: 20px;
+        font-size: 10px;
+    }
+}
+
 .back_button:hover {
     color: #060b13;
     background-color: white;

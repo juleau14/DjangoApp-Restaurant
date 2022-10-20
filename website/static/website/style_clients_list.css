@@ -3,16 +3,11 @@
 	src:  url("fonts/Louis-George-Cafe.ttf");
 }
 
-:root {
-    --min-width: 1000px
-}
-
 body {
     margin: 0;
     padding: 0;
 
     width: 100%;
-    min-width: var(--min-width);
 }
 
 a {
@@ -72,10 +67,14 @@ ul {
 
     font-family: main_font;
 
-    width: 40%;
-    min-width: 800px;
+    width: 60%;
 }
 
+@media all and (max-width: 900px) {
+    .full_list {
+        width: 95%;
+    }
+}
 
 .client_line, .legend_line {
     height: 45px;

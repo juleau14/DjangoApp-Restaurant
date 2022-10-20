@@ -8,7 +8,6 @@ body {
     padding: 0;
 
     width: 100%;
-    min-width: 1200px;
 }
 
 a {
@@ -20,7 +19,6 @@ a {
     background-color: #060b13;
 
     width: 100%;
-    min-width: 1000px;
    
     font-family: main_font;
     color: white;
@@ -61,7 +59,8 @@ a {
 
     font-family: main_font;
     font-size: x-large;
-    width: 700px;
+
+    width: 50%;
 
     border: solid #060b13 3px;
 
@@ -70,6 +69,12 @@ a {
     margin-left: auto;
     margin-right: auto;
     margin-top: 60px;
+}
+
+@media all and (max-width: 850px) {
+    .info_list {
+        width: 80%;
+    }
 }
 
 .info {
