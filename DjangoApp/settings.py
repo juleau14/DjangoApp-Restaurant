@@ -137,4 +137,4 @@ EMAIL_HOST_PASSWORD = 'JuleauTestdjango@10108'
 # EMAIL_FILE_PATH = 'website/mails_files/' # change this to a proper location
 
 
-ALLOWED_HOSTS = ['272.71.252.7', '127.0.0.1', 'airdefamilletoulouse.fr']
+ALLOWED_HOSTS = ['212.71.252.7', '127.0.0.1', 'airdefamilletoulouse.fr']
