@@ -17,6 +17,9 @@ from django.utils.html import strip_tags
 import datetime
 
 
+def redirect_home(request):
+    return redirect('home')
+
 
 def home(request):
     return render(request,

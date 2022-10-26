@@ -19,6 +19,8 @@ from website import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    path('', views.redirect_home, name='redirect-home'),
     
     path('home/', views.home, name='home'),
 
