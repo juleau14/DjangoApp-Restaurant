@@ -40,7 +40,7 @@ class EditClientForm(forms.ModelForm):
     class Meta:
         model = Client
         fields = '__all__'
-        exclude = ('name', 'phone_number', 'nb_reservations',)
+        exclude = ('first_name', 'name', 'phone_number', 'nb_reservations',)
         
         labels = {
             "comment": "Commentaire client",
