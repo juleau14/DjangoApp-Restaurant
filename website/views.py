@@ -153,6 +153,10 @@ def make_reservation(request):
                 try:                                                                # si le client est déjà venu on ajoute une reservation
                     client = Client.objects.get(phone_number=phone_num)
                     client.nb_reservations += 1
+                    
+                    if client.first_name == '':                                      # si le client n'avais pas de prénom on lui en ajoute un sur cette réservation
+                        client.first_name = form.cleaned_data['first_name']
+                    
                     client.save()
                 except:                                                  # si le numéro est inconnu on génère une nouvelle fiche client
                     new_client = Client()
