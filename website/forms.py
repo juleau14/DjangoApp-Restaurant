@@ -16,6 +16,7 @@ class ReservationForm(forms.ModelForm):
         exclude = ('accepted', 'meal_type')
 
         labels = {
+            "first_name": "Prénom",
             "name": "Nom",
             "mail": "E-mail",
             "phone_number": "Tél.",

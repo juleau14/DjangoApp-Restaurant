@@ -1,4 +1,5 @@
 
+from email.policy import default
 from multiprocessing.sharedctypes import Value
 from secrets import choice
 from wsgiref.validate import validator
@@ -47,6 +48,7 @@ class Reservation(models.Model):
         ('2', 'Refusé'),
     ]
 
+    first_name = models.fields.CharField(max_length=20, validators=[MaxLengthValidator(20)], default = '')
     name = models.fields.CharField(max_length=20, validators=[MaxLengthValidator(20)])
     mail = models.fields.EmailField(max_length=100, validators=[MaxLengthValidator(100)])
     phone_number = models.fields.CharField(max_length=10, default="", validators=[MaxLengthValidator(10), MinLengthValidator(10)])
@@ -62,7 +64,8 @@ class Reservation(models.Model):
 
 
 class Client(models.Model):
-    name = models.fields.CharField(max_length=100, default='')
+    first_name = models.fields.CharField(max_length=20, validators=[MaxLengthValidator(20)], default='')
+    name = models.fields.CharField(max_length=30, default='')
     phone_number = models.fields.CharField(max_length=10, default='')
     nb_reservations = models.fields.IntegerField(default=0)
     comment = models.fields.TextField(max_length=1000, default='')

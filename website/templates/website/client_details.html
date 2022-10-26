@@ -16,6 +16,7 @@
         
         <ul class="info_list">
             <li class="info">Nom : {{ client.name }}</li>
+            <li class="info">Prénom : {{ client.first_name }}</li>
             <li class="info">Tél. : {{ client.phone_number }}</li>
             <li class="info">Commentaire client :<a href="{% url 'edit-client' client.id %}" class="edit_button"><small>-Editer-</small></a> {{ client.comment }}</li>
         </ul>
