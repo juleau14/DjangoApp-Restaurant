@@ -90,23 +90,70 @@ a{
 }
 .void{
     height:100vh;
-    text-align:center;
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 
 .welcome_text{
+    text-align: center;
     animation-name:slideup;
     animation-duration:1s;
-    margin-left:auto;
-    margin-right:auto;
-    display:inline-block;
     font-family:lobster_font;
     color:#fff;
     text-shadow: 2px 2px 0 #060b13;
-    font-size:4em
+    font-size:4em;
+    width: 100%;
 }
+
+
+
+
+.reservation_button {
+    font-family: lobster_font;
+    font-size: 2em;
+
+    background-color: white;
+    color: #060b13;
+
+    text-align: center;
+    margin-top: 10vh;
+
+    width: 18vw;
+    min-width: 150px;
+    padding: 3vh 0;
+    min-height: 50px;
+
+    border-radius: 10px;
+
+    transition-duration: 0s;
+}
+
+
+.reservation_button:hover {
+    border-right: solid #060b13 5px;
+    border-bottom: solid #060b13 5px;
+
+    margin-top: calc(10vh - 5px);
+}
+
+
+@media all and (max-height: 650px) {
+    .void {
+        flex-direction: row;
+    }
+
+    .welcome_text {
+        width: 50%;  
+    }
+
+    .reservation_button {
+        margin-left: 2vw;
+    }
+}
+
 
 @media all and (max-width: 1000px) {
     html {
@@ -121,6 +168,16 @@ a{
 
     .nav, .topnav {
         font-size: 1.7em;
+    }
+
+    .reservation_button {
+        background-color: #060b13;
+        color: white;
+    }
+
+    .reservation_button:hover {
+        border-right: solid gray 5px;
+        border-bottom: solid grey 5px;
     }
 }
 
