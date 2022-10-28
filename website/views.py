@@ -259,7 +259,7 @@ def display_reservations_list(request):
             
             for reservation in all_reservations:
                 if meal_type == "A":
-                    if (reservation.resa_date == date) and (reservation.accepted == '0'):
+                    if reservation.resa_date == date and reservation.accepted == '0':
                         filtered_reservations.append(reservation)
                 else:
                     if reservation.resa_date == date and reservation.hour[0] == meal_type and reservation.accepted == '0':
