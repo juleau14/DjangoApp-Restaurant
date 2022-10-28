@@ -1,7 +1,10 @@
 from calendar import weekday
 from http.client import ACCEPTED, HTTPResponse
 from logging import NullHandler
+import mimetypes
+import os
 from xmlrpc.client import DateTime
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
@@ -633,7 +636,7 @@ def create_reservations_pdf(request):
     Reservations = Reservation.objects.filter(resa_date=today)
 
     pdf = FPDF()
-    nom_pdf = "Reservations_" + str(today) + ".pdf"
+    # nom_pdf = "Reservations_" + str(today) + ".pdf"
     pdf.add_page()
     pdf.set_font(family='Arial', size=10)
     pdf.cell(txt=("Réservations du " + str(today)), align="C", w=0, h=10, ln=2)
@@ -643,6 +646,23 @@ def create_reservations_pdf(request):
         #ligne = "pckpzkvokkvorko"
         pdf.cell(txt=ligne, align='C', w=0, h=10, ln=1)
     
-    pdf.output(name=nom_pdf, dest='F')
+    pdf.output(name="website/reservations_pdf/reservations.pdf", dest='F')
 
-    return redirect('display-reservations-list')
+    # Define text file name
+    filename = 'reservations.pdf'
+    # Define the full file path
+    filepath = 'C:/Users/jcamu/Desktop/GIT_CLONES/DjangoApp-Restaurant/website/reservations_pdf/reservations.pdf'
+    # Open the file for reading content
+    path = open(filepath, 'r', encoding="utf16")
+    # Set the mime type
+    mime_type, _ = mimetypes.guess_type(filepath)
+    # Set the return value of the HttpResponse
+    response = HttpResponse(path, content_type=mime_type)
+    # Set the HTTP header for sending to browser
+    response['Content-Disposition'] = "attachment; filename=%s" % filename
+    # Return the response value
+    return response
+    
+    # return render(request,
+    #     'website/create_reservations_pdf.html',
+    #     )
