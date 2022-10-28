@@ -32,7 +32,8 @@ urlpatterns = [
     
     path('manage_reservations/', views.display_reservations_list, name='display-reservations-list'),
     path('manage_reservations/<int:id>/details/', views.display_reservation_details, name='display-details'),
-    
+    path('manage_reservations/create_pdf', views.create_reservations_pdf, name='create-reservations-pdf'),
+
     path('manage_reservations/<int:id>/accept/', views.accept_reservation, name='accept-reservation'),
     path('manage_reservations/<int:id>/accept/confirmed/', views.accept_reservation_confirmed, name='accept-reservation-confirmed'),
     

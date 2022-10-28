@@ -1,6 +1,7 @@
 from calendar import weekday
 from http.client import ACCEPTED, HTTPResponse
 from logging import NullHandler
+from xmlrpc.client import DateTime
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
@@ -15,6 +16,7 @@ from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 
 import datetime
+from fpdf import FPDF
 
 
 def redirect_home(request):
@@ -623,3 +625,24 @@ def add_full_service(request):
         'website/add_full_service.html',
         {'form': form, 'message': ""},
         )
+
+
+def create_reservations_pdf(request):
+    today = datetime.date.today()
+
+    Reservations = Reservation.objects.filter(resa_date=today)
+
+    pdf = FPDF()
+    nom_pdf = "Reservations_" + str(today) + ".pdf"
+    pdf.add_page()
+    pdf.set_font(family='Arial', size=10)
+    pdf.cell(txt=("Réservations du " + str(today)), align="C", w=0, h=10, ln=2)
+    pdf.cell(txt='', w=0, h=10, ln=2)
+    for reservation in Reservations:
+        ligne = str(reservation.first_name + "   -   " + reservation. name + "   -   " + reservation.mail + "   -   " + reservation.nb_people + "   -   " + str(reservation.resa_date) + "   -   " + Reservation.HOUR_TRAD[reservation.hour])
+        #ligne = "pckpzkvokkvorko"
+        pdf.cell(txt=ligne, align='C', w=0, h=10, ln=1)
+    
+    pdf.output(name=nom_pdf, dest='F')
+
+    return redirect('display-reservations-list')
