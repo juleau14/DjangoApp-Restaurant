@@ -173,6 +173,8 @@ a{
     .reservation_button {
         background-color: #060b13;
         color: white;
+
+        width: 30vw;
     }
 
     .reservation_button:hover {
