@@ -18,8 +18,9 @@ from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 
-import datetime
 from fpdf import FPDF
+import aspose.words as aw
+import datetime
 
 
 def redirect_home(request):
@@ -635,25 +636,26 @@ def create_reservations_pdf(request):
 
     Reservations = Reservation.objects.filter(resa_date=today)
 
-    pdf = FPDF()
-    # nom_pdf = "Reservations_" + str(today) + ".pdf"
-    pdf.add_page()
-    pdf.set_font(family='Arial', size=10)
-    pdf.cell(txt=("Réservations du " + str(today)), align="C", w=0, h=10, ln=2)
-    pdf.cell(txt='', w=0, h=10, ln=2)
+    # create document object
+    doc = aw.Document()
+
+    # create a document builder object
+    builder = aw.DocumentBuilder(doc)
+
+    builder.write("Réservations du " + str(today))
     for reservation in Reservations:
         ligne = str(reservation.first_name + "   -   " + reservation. name + "   -   " + reservation.mail + "   -   " + reservation.nb_people + "   -   " + str(reservation.resa_date) + "   -   " + Reservation.HOUR_TRAD[reservation.hour])
-        #ligne = "pckpzkvokkvorko"
-        pdf.cell(txt=ligne, align='C', w=0, h=10, ln=1)
-    
-    pdf.output(name="website/reservations_pdf/reservations.pdf", dest='F')
+        builder.write(ligne)
+
+    # save document
+    doc.save("website/reservations_doc/reservations.docx")
 
     # Define text file name
-    filename = 'reservations.pdf'
+    filename = 'reservations.docx'
     # Define the full file path
-    filepath = 'C:/Users/jcamu/Desktop/GIT_CLONES/DjangoApp-Restaurant/website/reservations_pdf/reservations.pdf'
+    filepath = 'C:/Users/jcamu/Desktop/GIT_CLONES/DjangoApp-Restaurant/website/reservations_doc/reservations.docx'
     # Open the file for reading content
-    path = open(filepath, 'r', encoding="utf16")
+    path = open(filepath, 'r', encoding="utf-8")
     # Set the mime type
     mime_type, _ = mimetypes.guess_type(filepath)
     # Set the return value of the HttpResponse
@@ -662,7 +664,3 @@ def create_reservations_pdf(request):
     response['Content-Disposition'] = "attachment; filename=%s" % filename
     # Return the response value
     return response
-    
-    # return render(request,
-    #     'website/create_reservations_pdf.html',
-    #     )
