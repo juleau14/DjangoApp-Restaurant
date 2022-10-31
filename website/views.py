@@ -110,6 +110,42 @@ def reservation_is_valid(meal_type, diner_closed_days, date_form):      # vérif
     else:                                                           # la réservation ne rencontre aucun problème, elle est valide
         return True
 
+def translate_date(date_form):
+    translated_date = ""
+
+    weekday_dict = {
+        0: "Lundi ",
+        1: "Mardi ",
+        2: "Mercredi ",
+        3: "Jeudi ",
+        4: "Vendredi ",
+        5: "Samedi ",
+        6: "Dimanche ",
+    }
+
+    month_dict = {
+        1: " Janvier",
+        2: " Février",
+        3:  " Mars",
+        4: " Avril",
+        5: " Mai",
+        6: " Juin",
+        7: " Juillet",
+        8: " Août",
+        9: " Septembre",
+        10: " Octobre",
+        11: " Novembre",
+        12: " Décembre",
+    }
+
+    weekday = weekday_dict[date_form.weekday()]
+    day = date_form.day
+    month = month_dict[date_form.month]
+
+    translated_date = weekday + str(day) + month
+
+    return translated_date
+
 def make_reservation(request):
     if request.method == 'POST':
         form = ReservationForm(request.POST)
@@ -132,7 +168,7 @@ def make_reservation(request):
                 html_content = render_to_string("website/mails/confirm_reservation_mail.html",
                 {'nb_people': nb_people,
                 'name': name,
-                'date_form': date_form,
+                'date_form': translate_date(date_form),
                 'hour': hour,
                 'phone_number': phone_num,
                 },
@@ -141,7 +177,7 @@ def make_reservation(request):
                 text_content = strip_tags(html_content)
 
                 email = EmailMultiAlternatives(
-                    subject='Réservation air de famille',
+                    subject='[Restaurant L\'Air de  Famille - Toulouse] Accusé de réception',
                     body=text_content,
                     from_email= settings.EMAIL_HOST_USER,
                     to=[mail],
@@ -320,7 +356,7 @@ def accept_reservation_confirmed(request, id):
     html_content = render_to_string("website/mails/accept_reservation_mail.html",
                 {'nb_people': nb_people,
                 'name': name,
-                'date_form': date_form,
+                'date_form': translate_date(date_form),
                 'hour': hour,
                 'phone_number': phone_num,
                 },
@@ -329,7 +365,7 @@ def accept_reservation_confirmed(request, id):
     text_content = strip_tags(html_content)
 
     email = EmailMultiAlternatives(
-        subject='Réservation air de famille',
+        subject='[Restaurant L\'Air de Famille - Toulouse] Confirmation de votre réservation',
         body=text_content,
         from_email= settings.EMAIL_HOST_USER,
         to=[mail],
@@ -363,14 +399,14 @@ def refuse_reservation_confirmed(request, id):
     html_content = render_to_string("website/mails/refuse_reservation_mail.html",
                 {'nb_people': nb_people,
                 'name': name,
-                'date_form': date_form,
+                'date_form': translate_date(date_form),
                 'hour': hour}
                 )
 
     text_content = strip_tags(html_content)
 
     email = EmailMultiAlternatives(
-        subject='Réservation air de famille',
+        subject='[Restaurant L\'Air de Famille - Toulouse]  Récusation de votre réservation',
         body=text_content,
         from_email= settings.EMAIL_HOST_USER,
         to=[mail],
