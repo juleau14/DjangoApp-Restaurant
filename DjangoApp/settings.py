@@ -132,8 +132,8 @@ EMAIL_HOST = 'smtp-mail.outlook.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 #EMAIL_USE_SSL = True
-EMAIL_HOST_USER = 'test_django@outlook.fr'
-EMAIL_HOST_PASSWORD = 'JuleauTestdjango@10108'
+EMAIL_HOST_USER = 'airdefamille-reservation@outlook.fr'
+EMAIL_HOST_PASSWORD = 'JuleauChalande@10108'
 # EMAIL_FILE_PATH = 'website/mails_files/' # change this to a proper location
 
 
