@@ -51,7 +51,7 @@ class Reservation(models.Model):
     first_name = models.fields.CharField(max_length=20, validators=[MaxLengthValidator(20)], default = '')
     name = models.fields.CharField(max_length=20, validators=[MaxLengthValidator(20)])
     mail = models.fields.EmailField(max_length=100, validators=[MaxLengthValidator(100)])
-    phone_number = models.fields.CharField(max_length=10, default="", validators=[MaxLengthValidator(10), MinLengthValidator(10)])
+    phone_number = models.fields.CharField(max_length=10, default="")
     
     nb_people = models.fields.CharField(max_length=2, default=1, choices=NB_PEOPLE_CHOICES)
     resa_date = models.fields.DateField(default=django.utils.timezone.now)
