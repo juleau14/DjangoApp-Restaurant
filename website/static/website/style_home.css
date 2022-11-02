@@ -41,16 +41,17 @@
         opacity:100%
     }
 }
-html{
-    background-image:url(media/index_background.png);
-    background-size:cover;
-    background-attachment:fixed;
+html {
+    margin:0;
     scroll-behavior:smooth;
-    margin:0
 }
 
 
 body{
+    background-image:url(media/index_background.png);
+    background-size:cover;
+    background-attachment:fixed;
+
     margin:0
 }
 a{
@@ -59,35 +60,52 @@ a{
 .topnav{
     animation-duration:1s;
     animation-name:apparition;
-    overflow:hidden;
     background-color:#060b13;
     height:100px;
-    width:100%;
+    width:100vw;
     border-color:#fff;
     position:fixed;
     top:0
 }
 .topnav .nav{
-    display:block;
+    display:flex;
+    align-items: center;
     float:right;
     text-decoration:inherit;
     color:#fff;
     font-family:lobster_font;
     font-weight:700;
     font-size:1.5em;
-    height:100%;
-    padding-top:30px;
+    height:100px;
     padding-right:2%;
     padding-left:2%;
     transition:.2s
 }
 .topnav img{
-    height:100%
+    height:100px;
 }
 .topnav a:hover{
     background-color:#fff;
     color:#000
 }
+
+
+.scroll_progress_bar {
+    position: fixed;
+
+    animation-duration:1s;
+    animation-name:apparition;
+
+    margin-top: 100px;
+
+    width: 0px;
+
+    height: 8px;
+
+    background-color: lightgray;
+}
+
+
 .void{
     height:100vh;
     display: flex;
