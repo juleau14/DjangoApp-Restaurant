@@ -54,9 +54,14 @@ body{
 
     margin:0
 }
+
+
 a{
-    text-decoration:inherit
+    text-decoration:inherit;
+    color: inherit;
 }
+
+
 .topnav{
     animation-duration:1s;
     animation-name:apparition;
@@ -412,7 +417,12 @@ a{
 }
 
 
-.bottom {
+.bottom_div {
+    background-color: #060b13;
+}
+
+
+.logos_div {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -421,8 +431,30 @@ a{
 
     width: 100%;
     height: 10vh;
+}
 
-    background-color: #060b13;
+
+.connection_div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 5vh;
+
+    font-family: main_font;
+    color: white;
+}
+
+
+
+
+
+.login_button {
+    float: left;
+
+    font-family: main_font;
+
+    color: white;
 }
 
 
