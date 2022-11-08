@@ -1,4 +1,6 @@
-window.addEventListener("scroll", progressBar);
+function start() {
+    window.addEventListener("scroll", progressBar);
+}
 
 
 function progressBar() {
@@ -15,3 +17,6 @@ function progressBar() {
 
     bar.style.width = String(barWidth) + "px";
 }
+
+
+start();

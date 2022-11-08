@@ -52,7 +52,7 @@ body{
     background-size:cover;
     background-attachment:fixed;
 
-    margin:0
+    margin:0;
 }
 
 
@@ -339,25 +339,56 @@ a{
 .melba_div{
     display:flex;
     overflow: hidden;
-    align-items:center;
-    justify-content:center;
     float:right;
     width:50%;
     height:50vw;
-    background-color:#fff
 }
 
 
-.img_melba{
-    width:100%;
-    height:100%;
+.melba_content {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url(media/melba.png);
+    background-size: 110%;
 
     transition: 0.5s;
 }
 
 
-.img_melba:hover {
+
+.melba_content:hover {
     scale: 1.1;
+}
+
+
+.melba_text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-right: -200%;
+
+    color: #060b13;
+    
+    backdrop-filter: blur(40px);
+    height: 50vw;
+    width: 49vw;
+
+    animation-duration: 0.5;
+
+    font-family: lobster_font;
+    font-size: 2em;
+}
+
+
+.melba_content:hover > .melba_text {
+    margin-right: 0;
+    transition: 0.5s;
 }
 
 
