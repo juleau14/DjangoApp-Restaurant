@@ -41,11 +41,14 @@
         opacity:100%
     }
 }
+
+
+
+/* GENERAL */
 html {
     margin:0;
     scroll-behavior:smooth;
 }
-
 
 body{
     background-image:url(media/index_background.png);
@@ -55,13 +58,14 @@ body{
     margin:0;
 }
 
-
-a{
+a {
     text-decoration:inherit;
     color: inherit;
 }
 
 
+
+/* TOP */
 .topnav{
     animation-duration:1s;
     animation-name:apparition;
@@ -72,6 +76,7 @@ a{
     position:fixed;
     z-index: 2;
 }
+
 .topnav .nav{
     display:flex;
     align-items: center;
@@ -86,14 +91,15 @@ a{
     padding-left:2%;
     transition:.2s
 }
+
 .topnav img{
     height:100px;
 }
+
 .topnav a:hover{
     background-color:#fff;
     color:#000
 }
-
 
 .scroll_progress_bar {
     position: fixed;
@@ -113,6 +119,16 @@ a{
 }
 
 
+
+/* RESPONSIVE */
+@media all and (max-width: 1000px) {
+    .topnav .nav {
+        font-size: 1em;
+    }
+}
+
+
+/* VOID  */
 .void{
     height:100vh;
     display: flex;
@@ -120,7 +136,6 @@ a{
     justify-content: center;
     flex-direction: column;
 }
-
 
 .welcome_text{
     text-align: center;
@@ -132,9 +147,6 @@ a{
     font-size:4em;
     width: 100%;
 }
-
-
-
 
 .reservation_button {
     font-family: lobster_font;
@@ -156,7 +168,6 @@ a{
     transition-duration: 0s;
 }
 
-
 .reservation_button:hover {
     border-right: solid #060b13 5px;
     border-bottom: solid #060b13 5px;
@@ -164,7 +175,7 @@ a{
     margin-top: calc(10vh - 5px);
 }
 
-
+/* RESPONSIVE */
 @media all and (max-height: 650px) {
     .void {
         flex-direction: row;
@@ -208,15 +219,22 @@ a{
     }
 }
 
+
+
 .low_content{
     margin:0;
 }
+
+
+
+/* HOME TEXT  */
 .home_text_div{
     background-color:#1b3052;
     width:100%;
     text-align:center;
     margin:0
 }
+
 .home_text_title{
     font-family:main_font;
     font-weight:700;
@@ -224,6 +242,7 @@ a{
     padding-top:2vh;
     color: white;
 }
+
 .home_text_par{
     font-family:main_font;
     font-weight:700;
@@ -234,260 +253,352 @@ a{
 }
 
 
-.contacts_div{
-    width:50%;
-    height:50vw;
-    margin:0;
-    float:right;
-    background-color:#fff;
-    border-top:solid #000 1px;
-}
 
-.contacts_title{
-    font-family:lobster_font;
-    font-size:3em;
-    margin-left:auto;
-    margin-right:auto;
-    margin-top:5%;
-    text-align:center;
-    width:50%;
-    border-bottom:solid
-}
-.contacts_elements{
-    list-style-type:none;
-    margin-left:auto;
-    margin-right:auto;
-    margin-bottom:0;
-    padding:10%;
-    width:50%;
-    font-family:main_font;
-    font-size:2em
-}
-.contacts_elements li{
-    margin-top:10%;
-    margin-bottom:10%
-}
-.poivrons_div{
-    display:flex;
+/* POIVRONS DIV */
+.poivrons_div {
+    background-color: white;
+    float: left;
+    
+    width: 50%;
+    height: 49vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center ;
     overflow: hidden;
-    width:50%;
-    height:50vw;
-    align-items:center;
-    justify-content:center;
-    margin:0;
-    float:left;
-    background-color:#fff;
-    border-top:solid #000 1px
 }
 
+.poivrons_content {
+    background-image: url(media/poivrons.png);
+    background-size: 100%;
 
-.img_poivrons{
-    width:100%;
-    height:100%;
-    margin:0;
+    width: 100%;
+    height: 100%;
 
     transition: 0.5s;
-}
 
-
-.img_poivrons:hover {
-    scale: 1.1;
-}
-
-
-@media all and (max-width:1200px){
-    .contacts_div{
-        width:100%;
-        height:auto;
-        float:none;
-        margin:0;
-        border:none;
-        padding-bottom:5vh
-    }
-    .contacts_title{
-        margin-top:0
-    }
-    .contacts_elements{
-        margin-bottom:0
-    }
-    .poivrons_div{
-        float:none;
-        width:100%;
-        height:100vw;
-        border:none
-    }
-    .img_poivrons{
-        width:80vw;
-        height:80vw
-    }
-}
-.map_div{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    float:left;
-    width:50%;
-    height:50vw;
-    background-color:#fff
-}
-.map{
-    width:80%;
-    height:80%
-}
-
-
-.melba_div{
-    display:flex;
+    display: flex;
     overflow: hidden;
-    float:right;
-    width:50%;
-    height:50vw;
 }
 
+.poivrons_text {
+    color: #060b13;
+    font-family: lobster_font;
+    font-size: 2em;
 
-.melba_content {
-    height: 100%;
+    backdrop-filter: blur(10px);
+
     width: 100%;
+    height: 100%;
+    margin-top: 0;
+    margin-left: -100%;
 
     display: flex;
     justify-content: center;
     align-items: center;
-
-    background-image: url(media/melba.png);
-    background-size: 110%;
+    text-align: center;
 
     transition: 0.5s;
 }
 
+.poivrons_content:hover {
+    scale: 1.1;
+}
 
+.poivrons_content:hover .poivrons_text {
+    margin-left: 0;
+}
+
+
+
+/* CONTACTS DIV */
+.contacts_div {
+    background-color: white;
+    float: right;
+
+    width: 50%;
+    height: 49vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contacts_content {
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 80%;
+    height: 80%;
+
+    color: white;
+
+    background-color: #1b3052;
+}
+
+.contacts_title {
+    font-family: lobster_font;
+
+    font-size: 2em;
+}
+
+.contacts_elements {
+    list-style-type: none;
+    
+    font-family: main_font;
+    font-size: 1.5em;
+
+    text-align: center;
+}
+
+.contacts_elements li {
+    margin-top: 10%;
+}
+
+
+
+/* MAP DIV */
+.map_div {
+    background-color: white;
+    float: left;
+
+    width: 50%;
+    height: 49vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.map {
+    width: 80%;
+    height: 80%;
+}
+
+
+
+/* MELBA DIV */
+.melba_div {
+    background-color: purple;
+    float: right;
+
+    width: 50%;
+    height: 49vw;
+
+    display: block;
+    overflow: hidden;
+}
+
+.melba_content {
+    background-image: url(media/melba.png);
+    background-size: 100%;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    transition: 0.5s;
+}
+
+.melba_text {
+    color: #060b13;
+    font-family: lobster_font;
+    font-size: 2em;
+
+    backdrop-filter: blur(10px);
+
+    width: 100%;
+    height: 100%;
+    margin-top: 0;
+    margin-left: 50vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    transition: 0.5s;
+}
 
 .melba_content:hover {
     scale: 1.1;
 }
 
+.melba_content:hover .melba_text {
+    margin-left: 0;
+}
 
-.melba_text {
+
+
+/* MOULES DIV */
+.moules_div {
+    background-color: white;
+    float: left;
+
+    width: 50%;
+    height: 49vw;
+
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+}
 
-    margin-right: -200%;
+.moules_content {
+    background-image: url(media/moules.png);
+    background-size: 100%;
 
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    overflow: hidden;
+
+    transition: 0.5s;    
+}
+
+.moules_text {
     color: #060b13;
-    
-    backdrop-filter: blur(40px);
-    height: 50vw;
-    width: 49vw;
+    font-family: lobster_font;
+    font-size: 2em;
 
-    animation-duration: 0.5;
+    backdrop-filter: blur(10px);
 
+    width: 100%;
+    height: 100%;
+    margin-top: 0;
+    margin-left: -100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    transition: 0.5s;
+}
+
+.moules_content:hover {
+    scale: 1.1;
+}
+
+.moules_content:hover .moules_text {
+    margin-left: 0;
+}
+
+
+
+/* PRICES DIV */
+.prices_div {
+    background-color: white;
+    float: right;
+
+    width: 50%;
+    height: 49vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.prices_content {
+    border-radius: 5%;
+
+    height: 80%;
+    width: 80%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    color:white;
+
+    background-color: #1b3052;
+}
+
+.prices_title {
     font-family: lobster_font;
     font-size: 2em;
 }
 
-
-.melba_content:hover > .melba_text {
-    margin-right: 0;
-    transition: 0.5s;
+.prices_text {
+    font-family: main_font;
+    font-size: 1.5em;
 }
 
 
-@media all and (max-width:1200px){
-    .map_div{
-        float:none;
-        width:100%;
-        height:100vw
+
+/* RESPONSIVE IMG */
+@media all and (max-width: 1000px) {
+    /* POIVRONS DIV  */
+    .poivrons_div {
+        width: 100%;
+        height: 95vw;
     }
-    .map{
-        width:70vw;
-        height:70vw
+
+    .poivrons_content {
+        width: 80%;
+        height: 80%; 
     }
-    .melba_div{
-        float:none;
-        width:100%;
-        height:100vw
+
+    /* CONTACTS DIV */
+    .contacts_div {
+        width: 100%;
+        height: 95vw;
     }
-    .img_melba{
-        width:80vw;
-        height:80vw
+
+    .contacts_title {
+        font-size: 1.5em;
     }
-}
-.moules_div{
-    display:flex;
-    overflow: hidden;
-    justify-content:center;
-    align-items:center;
-    float:left;
-    width:50%;
-    height:50vw;
-    background-color:#fff;
-}
 
-
-.img_moules{
-    width:100%;
-    height: 100%;
-
-    transition-duration: 0.5s;
-}
-
-
-.img_moules:hover {
-    scale: 1.1;
-}
-
-
-.prices_div{
-    float:right;
-    width:50%;
-    height:50vw;
-    background-color:#fff;
-}
-
-.prices_title{
-    font-family:lobster_font;
-    font-size:3em;
-    margin-left:auto;
-    margin-right:auto;
-    margin-top:5%;
-    text-align:center;
-    width:50%;
-    border-bottom:solid
-}
-.prices_text{
-    font-family:main_font;
-    font-size:1.5em;
-    width:50%;
-    margin-left:auto;
-    margin-right:auto;
-    margin-top:10%;
-    padding-left:10%;
-    padding-bottom:5%;
-    border-left:solid;
-    border-bottom:solid
-}
-@media all and (max-width:1200px){
-    .moules_div{
-        float:none;
-        width:100%;
-        height:100vw
+    .contacts_elements {
+        font-size: 1em;
     }
-    .img_moules{
-        width:80vw;
-        height:80vw
+    
+    /* MAP DIV  */
+    .map_div {
+        width: 100%;
+        height: 95vw;
     }
-    .prices_div{
-        float:none;
-        width:100%;
-        height:auto;
-        padding-bottom:10vh
+
+    /* MELBA DIV */
+    .melba_div {
+        display: none;
     }
-    .prices_title{
-        margin-top:0
+
+    /* MOULES DIV */
+    .moules_div {
+        width: 100%;
+        height: 95vw;
+    }
+
+    .moules_content {
+        width: 80%;
+        height: 80%; 
+    }
+
+    /* PRICES DIV */
+    .prices_div {
+        height: 110vw;
+        width: 100%;
+    }
+
+    .prices_title {
+        font-size: 1.5em;
+    }
+
+    .prices_text {
+        font-size: 1em;
     }
 }
 
 
+
+/* BOTTOM */
 .bottom_div {
     background-color: #060b13;
 }
