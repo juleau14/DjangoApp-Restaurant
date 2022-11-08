@@ -70,7 +70,7 @@ a{
     width:100vw;
     border-color:#fff;
     position:fixed;
-    top:0
+    z-index: 2;
 }
 .topnav .nav{
     display:flex;
@@ -108,6 +108,8 @@ a{
     height: 8px;
 
     background-color: lightgray;
+
+    z-index: 2;
 }
 
 
@@ -267,6 +269,7 @@ a{
 }
 .poivrons_div{
     display:flex;
+    overflow: hidden;
     width:50%;
     height:50vw;
     align-items:center;
@@ -276,11 +279,22 @@ a{
     background-color:#fff;
     border-top:solid #000 1px
 }
+
+
 .img_poivrons{
     width:100%;
     height:100%;
-    margin:0
+    margin:0;
+
+    transition: 0.5s;
 }
+
+
+.img_poivrons:hover {
+    scale: 1.1;
+}
+
+
 @media all and (max-width:1200px){
     .contacts_div{
         width:100%;
@@ -320,8 +334,11 @@ a{
     width:80%;
     height:80%
 }
+
+
 .melba_div{
     display:flex;
+    overflow: hidden;
     align-items:center;
     justify-content:center;
     float:right;
@@ -329,10 +346,21 @@ a{
     height:50vw;
     background-color:#fff
 }
+
+
 .img_melba{
     width:100%;
-    height:100%
+    height:100%;
+
+    transition: 0.5s;
 }
+
+
+.img_melba:hover {
+    scale: 1.1;
+}
+
+
 @media all and (max-width:1200px){
     .map_div{
         float:none;
@@ -355,22 +383,34 @@ a{
 }
 .moules_div{
     display:flex;
+    overflow: hidden;
     justify-content:center;
     align-items:center;
     float:left;
     width:50%;
     height:50vw;
-    background-color:#fff
+    background-color:#fff;
 }
+
+
 .img_moules{
     width:100%;
     height: 100%;
+
+    transition-duration: 0.5s;
 }
+
+
+.img_moules:hover {
+    scale: 1.1;
+}
+
+
 .prices_div{
     float:right;
     width:50%;
     height:50vw;
-    background-color:#fff
+    background-color:#fff;
 }
 
 .prices_title{
