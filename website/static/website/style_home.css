@@ -532,7 +532,7 @@ a {
 
 
 
-/* RESPONSIVE IMG */
+/* RESPONSIVE */
 @media all and (max-width: 1000px) {
     /* POIVRONS DIV  */
     .poivrons_div {
@@ -549,14 +549,6 @@ a {
     .contacts_div {
         width: 100%;
         height: 95vw;
-    }
-
-    .contacts_title {
-        font-size: 1.5em;
-    }
-
-    .contacts_elements {
-        font-size: 1em;
     }
     
     /* MAP DIV  */
@@ -585,14 +577,6 @@ a {
     .prices_div {
         height: 110vw;
         width: 100%;
-    }
-
-    .prices_title {
-        font-size: 1.5em;
-    }
-
-    .prices_text {
-        font-size: 1em;
     }
 }
 
