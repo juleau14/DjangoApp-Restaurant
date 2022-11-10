@@ -1,8 +1,17 @@
+const contactsScrollButton = document.querySelector(".nav.contacts");
+const pricesScrollButton = document.querySelector(".nav.prices");
+const topScrollButton = document.querySelector(".nav.top");
+
+
 function start() {
     window.addEventListener("scroll", progressBar);
     window.addEventListener("scroll", contactApparition);
     window.addEventListener("scroll", mapApparition);
     window.addEventListener("scroll", pricesApparition);
+
+    contactsScrollButton.addEventListener("click", scrollToContacts);
+    pricesScrollButton.addEventListener("click", scrollToPrices);
+    topScrollButton.addEventListener("click", scrollToTop);
 }
 
 
@@ -58,6 +67,24 @@ function pricesApparition() {
     else {
         prices.style.marginLeft = "100vw";
     }
+}
+
+
+function scrollToContacts() {
+    const contactsDiv = document.querySelector(".contacts_div");
+    window.scrollBy(0, contactsDiv.getBoundingClientRect().top);
+    html.style.backgroundColor="red";
+}
+
+
+function scrollToPrices() {
+    const pricesDiv = document.querySelector(".prices_div");
+    window.scrollBy(0, pricesDiv.getBoundingClientRect().top);
+}
+
+
+function scrollToTop() {
+    window.scrollTo(0, 0);
 }
 
 
