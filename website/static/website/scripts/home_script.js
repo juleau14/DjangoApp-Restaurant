@@ -1,14 +1,21 @@
+const body = document.querySelector("body");
+
 const contactsScrollButton = document.querySelector(".nav.contacts");
 const pricesScrollButton = document.querySelector(".nav.prices");
 const topScrollButton = document.querySelector(".nav.top");
 
 
 function start() {
-    window.addEventListener("scroll", progressBar);
+    // Progress bar
+    window.addEventListener("scroll", progressBar);     
+    
+    // Apparitions
     window.addEventListener("scroll", contactApparition);
     window.addEventListener("scroll", mapApparition);
     window.addEventListener("scroll", pricesApparition);
+    window.addEventListener("scroll", logosApparitions);
 
+    // Scroll Buttons
     contactsScrollButton.addEventListener("click", scrollToContacts);
     pricesScrollButton.addEventListener("click", scrollToPrices);
     topScrollButton.addEventListener("click", scrollToTop);
@@ -66,6 +73,29 @@ function pricesApparition() {
 
     else {
         prices.style.marginLeft = "100vw";
+    }
+}
+
+
+function logosApparitions() {
+    const logoInstagram = document.querySelector(".logo_link.instagram");
+    const logoFacebook = document.querySelector(".logo_link.facebook");
+    const logoMichelin = document.querySelector(".logo_link.michelin");
+    const logoGaultmillau = document.querySelector(".logo_link.gaultmillau");
+
+    if (window.scrollY >= (body.offsetHeight - window.innerHeight - 30)) {
+        logoInstagram.style.marginLeft = "3vw";
+        logoInstagram.style.transition = "1s";
+
+        logoFacebook.style.marginLeft = "3vw";
+        logoFacebook.style.transition = "1.2s";
+        logoFacebook.style.display = "inherit";
+
+        logoMichelin.style.marginLeft = "3vw";
+        logoMichelin.style.transition = "1.4";
+
+        logoGaultmillau.style.marginLeft = "3vw";
+        logoGaultmillau.style.transition = "1.6s";
     }
 }
 

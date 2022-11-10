@@ -615,17 +615,6 @@ a {
 }
 
 
-.logos_div {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-
-    width: 100%;
-    height: 10vh;
-}
-
 
 .connection_div {
     display: flex;
@@ -651,10 +640,32 @@ a {
 }
 
 
+.logos_div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    width: 100%;
+    height: 10vh;
+
+    overflow: hidden;
+}
+
+
 .logo_link {
     height: 80%;
 
-    margin: 0 3vw;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 3vw;
+    margin-left: -200vw;
+}
+
+
+.logo_link.facebook {
+    display: none;
 }
 
 
