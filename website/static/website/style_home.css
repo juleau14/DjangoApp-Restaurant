@@ -322,6 +322,8 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    overflow: hidden;
 }
 
 .contacts_content {
@@ -331,12 +333,16 @@ a {
     justify-content: center;
     align-items: center;
 
+    margin-left: 100vw;
+
     width: 80%;
     height: 80%;
 
     color: white;
 
     background-color: #1b3052;
+
+    transition: 1.5s;
 }
 
 .contacts_title {
@@ -371,11 +377,17 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    overflow: hidden;
 }
 
 .map {
     width: 80%;
     height: 80%;
+
+    margin-left: -100vw;
+
+    transition: 1.5s;
 }
 
 
@@ -502,6 +514,8 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    overflow: hidden;
 }
 
 .prices_content {
@@ -518,6 +532,10 @@ a {
     color:white;
 
     background-color: #1b3052;
+
+    margin-left: 100vw;
+
+    transition: 1.5s;
 }
 
 .prices_title {
