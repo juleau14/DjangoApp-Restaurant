@@ -6,6 +6,9 @@ const topScrollButton = document.querySelector(".nav.top");
 
 
 function start() {
+    // Loader
+    window.addEventListener("load", hideLoader);
+
     // Progress bar
     window.addEventListener("scroll", progressBar);     
     
@@ -19,6 +22,17 @@ function start() {
     contactsScrollButton.addEventListener("click", scrollToContacts);
     pricesScrollButton.addEventListener("click", scrollToPrices);
     topScrollButton.addEventListener("click", scrollToTop);
+}
+
+
+function hideLoader() {
+    const loader = document.querySelector(".loader");
+    const animation = document.querySelector(".loading_animation");
+    setTimeout(function() {
+        loader.style.height = "0";
+        animation.style.height = "0";
+        setTimeout(function() {loader.style.display = "none"}, 1000 );
+    }, 2000);
 }
 
 
