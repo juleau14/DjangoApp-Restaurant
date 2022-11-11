@@ -17,12 +17,18 @@
 		<div class="topnav">
 			<button class="nav prices">Formules</button>
 			<button class="nav contacts">Contact</button>
-			<button class="nav top"><img src="{% static "website/media/logo.jpg" %}"/></button>
+			<button class="nav top"><img src="{% static 'website/media/logo.jpg' %}"/></button>
 		</div>
 
 		<div class="scroll_progress_bar"></div>
 
-		<div id="top"></div>
+		<button class="open_phone_nav"><img src="{% static 'website/media/phone_menu_icon.png' %}" alt="open nav"/></button>
+
+		<div class="phone_nav">
+			<button class="close_phone_nav"><img src="{% static 'website/media/close_nav_icon.png' %}" alt="close"></button>
+			
+		</div>
+
 		<div class="void">
 			<h1 class="welcome_text">Bienvenue à l'Air de famille</h1> 
 			<a class="reservation_button" href="{% url 'reservation-page' %}">RESERVER</a>
