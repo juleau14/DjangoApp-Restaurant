@@ -1,5 +1,12 @@
 const body = document.querySelector("body");
 
+// Phone nav
+const openPhoneNavButton = document.querySelector(".open_phone_nav");
+const closePhoneNavButton = document.querySelector(".close_phone_nav");
+const contactsPhoneNavButton = document.querySelector(".phone_nav_button.contacts");
+const pricesPhoneNavButton = document.querySelector(".phone_nav_button.prices");
+
+// Scroll
 const contactsScrollButton = document.querySelector(".nav.contacts");
 const pricesScrollButton = document.querySelector(".nav.prices");
 const topScrollButton = document.querySelector(".nav.top");
@@ -8,6 +15,13 @@ const topScrollButton = document.querySelector(".nav.top");
 function start() {
     // Loader
     window.addEventListener("load", hideLoader);
+
+    // PhoneNav
+    window.addEventListener("scroll", phoneNavButtonToTop);
+    openPhoneNavButton.addEventListener("click", displayPhoneNav);
+    closePhoneNavButton.addEventListener("click", closePhoneNav);
+    contactsPhoneNavButton.addEventListener("click", scrollToContactsPhoneNav);
+    pricesPhoneNavButton.addEventListener("click", scrollToPricesPhoneNav);
 
     // Progress bar
     window.addEventListener("scroll", progressBar);     
@@ -49,6 +63,52 @@ function progressBar() {
     let barWidth = ratioAlreadyScrolled * totalWidth;
 
     bar.style.width = String(barWidth) + "px";
+}
+
+
+function phoneNavButtonToTop() {
+    if (window.scrollY == 0) {
+        openPhoneNavButton.style.marginTop = '0';
+    }
+    else {
+        openPhoneNavButton.style.marginTop = '8px';
+    }
+}
+
+
+function displayPhoneNav() {
+    const phoneNav = document.querySelector(".phone_nav");
+
+    phoneNav.style.visibility = 'inherit';
+    phoneNav.style.transform = 'rotate(0)';
+    phoneNav.style.height = '100vh';
+    phoneNav.style.marginLeft = '0';
+
+    openPhoneNavButton.style.marginLeft = '-70px';
+}
+
+
+function closePhoneNav() {
+    const phoneNav = document.querySelector(".phone_nav");
+
+    phoneNav.style.marginLeft = '-200vw';
+    phoneNav.style.transform = 'rotate(-45deg)';
+    phoneNav.style.height = '400vh';
+    setTimeout(function() {phoneNav.style.visibility = 'hidden'}, 1000);
+
+    openPhoneNavButton.style.marginLeft = '0';
+}
+
+
+function scrollToContactsPhoneNav() {
+    closePhoneNav();
+    scrollToContacts();
+}
+
+
+function scrollToPricesPhoneNav() {
+    closePhoneNav();
+    scrollToPrices();
 }
 
 
