@@ -256,8 +256,46 @@ a {
 }
 
 
-.phone_nav_list button {
+.phone_nav_content {
+    display:  flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+    width: 60%;
+    height: 100%;
+
+}
+
+
+.phone_nav_button {
+    width: 100%;
+
+    background-color: transparent;
     color: white;
+    font-family: main_font;
+    font-size: 3em;
+    font-weight: 900;
+
+    padding: 4vh 0;
+
+    border: none;
+}
+
+
+.phone_nav_button:hover {
+    background-color: white;
+    color: #060b13;
+}
+
+
+.phone_nav_info {
+    font-family: main_font;
+    color: white;
+    font-size: 2em;
+
+    width: 100%;
+    text-align: center;
 }
 
 

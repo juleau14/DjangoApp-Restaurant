@@ -1,8 +1,12 @@
 const body = document.querySelector("body");
 
+// Phone nav
 const openPhoneNavButton = document.querySelector(".open_phone_nav");
 const closePhoneNavButton = document.querySelector(".close_phone_nav");
+const contactsPhoneNavButton = document.querySelector(".phone_nav_button.contacts");
+const pricesPhoneNavButton = document.querySelector(".phone_nav_button.prices");
 
+// Scroll
 const contactsScrollButton = document.querySelector(".nav.contacts");
 const pricesScrollButton = document.querySelector(".nav.prices");
 const topScrollButton = document.querySelector(".nav.top");
@@ -16,6 +20,8 @@ function start() {
     window.addEventListener("scroll", phoneNavButtonToTop);
     openPhoneNavButton.addEventListener("click", displayPhoneNav);
     closePhoneNavButton.addEventListener("click", closePhoneNav);
+    contactsPhoneNavButton.addEventListener("click", scrollToContactsPhoneNav);
+    pricesPhoneNavButton.addEventListener("click", scrollToPricesPhoneNav);
 
     // Progress bar
     window.addEventListener("scroll", progressBar);     
@@ -91,6 +97,18 @@ function closePhoneNav() {
     setTimeout(function() {phoneNav.style.visibility = 'hidden'}, 1000);
 
     openPhoneNavButton.style.marginLeft = '0';
+}
+
+
+function scrollToContactsPhoneNav() {
+    closePhoneNav();
+    scrollToContacts();
+}
+
+
+function scrollToPricesPhoneNav() {
+    closePhoneNav();
+    scrollToPrices();
 }
 
 
