@@ -71,7 +71,7 @@ a {
 /* LOADER */
 .loader {
     position: fixed;
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: center;
 
