@@ -287,6 +287,9 @@ a {
     border: none;
 }
 
+.phone_nav_button.reservation {
+    text-align: center;
+}
 
 .phone_nav_button:hover {
     background-color: white;
