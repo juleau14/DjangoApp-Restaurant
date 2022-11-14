@@ -404,23 +404,6 @@ a {
     font-weight: bolder;
 }
 
-/* RESPONSIVE */
-@media all and (max-height: 650px) {
-
-    .welcome_text {
-        width: 50%;
-    }
-
-    .reservation_button {
-        margin-left: 2vw;
-    }
-
-    .schedules_content {
-        font-size: 2.5em;
-        font-weight: bold;
-    }
-}
-
 
 @media all and (max-width: 1000px) {
     body {
@@ -459,6 +442,23 @@ a {
         font-size: 1em;
 
         padding: 30px;
+    }
+}
+
+/* RESPONSIVE */
+@media all and (max-height: 650px) {
+
+    .welcome_text {
+        width: 50%;
+    }
+
+    .reservation_button {
+        margin-left: 2vw;
+    }
+
+    .schedules_content {
+        font-size: 2.5em;
+        font-weight: bold;
     }
 }
 
