@@ -71,7 +71,7 @@ a {
 /* LOADER */
 .loader {
     position: fixed;
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: center;
 
@@ -412,7 +412,7 @@ a {
     }
 
     .welcome_text {
-        font-size: 50px;
+        font-size: 100px;
 
         color: #060b13;
         text-shadow: 2px 2px 0 white;
@@ -423,7 +423,7 @@ a {
         color: white;
         border-color: #060b13;
 
-        margin-top: 0;
+        margin-top: 10vh;
 
         width: 30vw;
     }
@@ -451,7 +451,7 @@ a {
     }
 
     .schedules_content {
-        font-size: 20px;
+        font-size: 40px;
         padding: 30px;
     }
 }
