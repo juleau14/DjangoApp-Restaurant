@@ -211,6 +211,11 @@ a {
 }
 
 
+.open_phone_nav:hover {
+    opacity: 0.7;
+}
+
+
 .phone_nav {
     position: fixed;
 
@@ -312,6 +317,7 @@ a {
 
     .scroll_progress_bar {
         margin-top: 0;
+        background-color: #060b13;
     }
 }
 
@@ -330,15 +336,19 @@ a {
     animation-name:slideup;
     animation-duration:1s;
     font-family:lobster_font;
-    color:#fff;
+    color: #fff;
     text-shadow: 2px 2px 0 #060b13;
     font-size:4em;
     width: 100%;
 }
 
 .reservation_button {
-    font-family: lobster_font;
+    font-family: main_font;
     font-size: 2em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     background-color: white;
     color: #060b13;
@@ -347,20 +357,18 @@ a {
     margin-top: 10vh;
 
     width: 18vw;
+    height: 10vh;
     min-width: 150px;
-    padding: 3vh 0;
     min-height: 50px;
 
     border-radius: 10px;
+    border: solid white 3px;
 
     transition-duration: 0s;
 }
 
 .reservation_button:hover {
-    border-right: solid #060b13 5px;
-    border-bottom: solid #060b13 5px;
-
-    margin-top: calc(10vh - 5px);
+    font-weight: bolder;
 }
 
 /* RESPONSIVE */
@@ -371,6 +379,8 @@ a {
 
     .welcome_text {
         width: 50%;  
+        color: #060b13;
+        text-shadow: 2px 2px 0 white;
     }
 
     .reservation_button {
@@ -397,13 +407,13 @@ a {
     .reservation_button {
         background-color: #060b13;
         color: white;
+        border-color: #060b13;
 
         width: 30vw;
     }
 
     .reservation_button:hover {
-        border-right: solid gray 5px;
-        border-bottom: solid grey 5px;
+        font-weight: bolder;
     }
 }
 
@@ -417,27 +427,36 @@ a {
 
 /* HOME TEXT  */
 .home_text_div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
     background-color:#1b3052;
-    width:100%;
     text-align:center;
-    margin:0
+}
+
+.home_text_content {
+    margin:  10vh 10%;
 }
 
 .home_text_title{
     font-family:main_font;
     font-weight:700;
-    font-size:3em;
-    padding-top:2vh;
+    font-size:2em;
     color: white;
 }
 
 .home_text_par{
     font-family:main_font;
     font-weight:700;
-    font-size:2em;
+    font-size:1.5em;
     color:white;
-    padding-bottom:3vh;
-    margin:0 10%
+}
+
+.home_text_signature {
+    font-family: main_font;
+    color: white;
+    float: right;
 }
 
 
