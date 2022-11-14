@@ -414,6 +414,11 @@ a {
     .reservation_button {
         margin-left: 2vw;
     }
+
+    .schedules_content {
+        font-size: 2.5em;
+        font-weight: bold;
+    }
 }
 
 
