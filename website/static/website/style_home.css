@@ -326,9 +326,42 @@ a {
 .void{
     height:100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
+}
+
+.void_top {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 80%;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.void_bot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.schedules_div {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+    width: 80%;
+}
+
+.schedules_content {
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: main_font;
+    color: white;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .welcome_text{
@@ -373,14 +406,9 @@ a {
 
 /* RESPONSIVE */
 @media all and (max-height: 650px) {
-    .void {
-        flex-direction: row;
-    }
 
     .welcome_text {
-        width: 50%;  
-        color: #060b13;
-        text-shadow: 2px 2px 0 white;
+        width: 50%;
     }
 
     .reservation_button {
@@ -398,6 +426,9 @@ a {
 
     .welcome_text {
         font-size: 6em;
+
+        color: #060b13;
+        text-shadow: 2px 2px 0 white;
     }
 
     .nav, .topnav {
@@ -409,11 +440,20 @@ a {
         color: white;
         border-color: #060b13;
 
+        margin-top: 0;
+
         width: 30vw;
     }
 
     .reservation_button:hover {
         font-weight: bolder;
+    }
+
+    .schedules_content {
+        background-color: #060b13;
+        font-size: 1em;
+
+        padding: 30px;
     }
 }
 
