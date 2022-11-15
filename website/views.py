@@ -51,11 +51,11 @@ def reservation_is_too_late(meal_type, date_form): # vérifie si l'heure de rese
     today = datetime.date.today()
     if today == date_form:
         if meal_type == "M":
-            if now.hour >= 11:
+            if now.hour + 1 >= 11:
                 return True
 
         elif meal_type == "D":
-            if now.hour >= 19:
+            if now.hour + 1 >= 19:
                 return True
 
     return False
