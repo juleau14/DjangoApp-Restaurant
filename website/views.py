@@ -146,6 +146,12 @@ def translate_date(date_form):
 
     return translated_date
 
+
+def maintenance(request):
+    return render(request,
+        'website/maintenance.html')
+
+
 def make_reservation(request):
     if request.method == 'POST':
         form = ReservationForm(request.POST)
@@ -220,10 +226,12 @@ def make_reservation(request):
     else:
         form = ReservationForm()
 
-        return render(request,
-        'website/reservation.html',
-        {'form': form}
-        )
+        # return render(request,
+        # 'website/reservation.html',
+        # {'form': form}
+        # )
+
+        return redirect('maintenance')
 
 
 def reservation_confirmated(request, mail):

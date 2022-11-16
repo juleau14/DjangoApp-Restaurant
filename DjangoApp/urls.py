@@ -53,4 +53,6 @@ urlpatterns = [
 
     path('full_services/', views.display_full_services, name='display-full-services'),
     path('full_services/add/', views.add_full_service, name='add-full-service'),
+
+    path('reservation/maintenance', views.maintenance, name='maintenance'),
 ]
