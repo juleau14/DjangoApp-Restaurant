@@ -128,11 +128,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL  = '/login/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp-mail.outlook.com'
+EMAIL_HOST = 'smtp.ionos.fr'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-#EMAIL_USE_SSL = True
-EMAIL_HOST_USER = 'airdefamille-reservation@outlook.fr'
+# EMAIL_USE_SSL = True
+EMAIL_HOST_USER = 'reservation@airdefamilletoulouse.fr'
 EMAIL_HOST_PASSWORD = 'JuleauChalande@10108'
 # EMAIL_FILE_PATH = 'website/mails_files/' # change this to a proper location
 

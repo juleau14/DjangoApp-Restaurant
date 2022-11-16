@@ -190,7 +190,7 @@ def make_reservation(request):
                 )
 
                 email.attach_alternative(html_content, "text/html")
-                email.send(fail_silently=True)
+                email.send(fail_silently=False)
                 
                 try:                                                                # si le client est déjà venu on ajoute une reservation
                     client = Client.objects.get(phone_number=phone_num)
@@ -226,12 +226,12 @@ def make_reservation(request):
     else:
         form = ReservationForm()
 
-        # return render(request,
-        # 'website/reservation.html',
-        # {'form': form}
-        # )
+        return render(request,
+        'website/reservation.html',
+        {'form': form}
+        )
 
-        return redirect('maintenance')
+        # return redirect('maintenance')
 
 
 def reservation_confirmated(request, mail):
@@ -380,7 +380,7 @@ def accept_reservation_confirmed(request, id):
     )
 
     email.attach_alternative(html_content, "text/html")
-    email.send(fail_silently=True)
+    email.send(fail_silently=False)
 
     return redirect('display-reservations-list')
 
