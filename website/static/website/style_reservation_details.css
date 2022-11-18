@@ -46,6 +46,8 @@ a {
     font-size: 20px;
     border: solid white 3px;
 
+    background-color: #060b13;
+
     transition: 0.2s;
 
     margin-top: 20px;
@@ -71,7 +73,7 @@ a {
 
     margin-left: auto;
     margin-right: auto;
-    margin-top: 60px;
+    margin-top: 10px;
 }
 
 @media all and (max-width:1000px) {
@@ -95,4 +97,34 @@ a {
     float: right;
     margin-right: 30px;
     padding: 5px;
+}
+
+
+.buttons_div {
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.accept_button, .refuse_button {
+    display: flex;
+    align-items: center;
+
+    color: white;
+
+    margin-right: 40px;
+    height: 30px;
+
+    border: solid #060b13 1px;
+    padding: 0 5px;
+}
+
+
+.accept_button:hover, .refuse_button:hover {
+    background-color: white;
+    color: #060b13;
 }

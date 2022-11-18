@@ -9,7 +9,7 @@
         <link rel="shortcut icon" href="{% static 'website/media/favicon.ico' %}" type="image/x-icon">
     </head>
     <body>
-        <a href="{% url 'display-reservations-list' %}" class="back_button">Retour</a>
+        <a href="{% url 'close-tab' %}" class="back_button">Retour</a>
         
         <div class="top">
             <h1 class="title">Edition du client</h1>
@@ -21,5 +21,6 @@
                 <input class="send" type="submit" value="Enregistrer">
             </form>
         </div>
-        </body>
+    </body>
+    <script type="text/javascript" src="{% static 'website/scripts/edit_client_script.js' %}"></script>
 </html>

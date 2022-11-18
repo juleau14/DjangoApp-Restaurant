@@ -15,10 +15,16 @@ from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 
 import datetime
+import time
 
 
 def redirect_home(request):
     return redirect('home')
+
+
+def close_tab(request):
+    return render(request,
+        'website/close_tab.html')
 
 
 def home(request):
@@ -382,7 +388,7 @@ def accept_reservation_confirmed(request, id):
     email.attach_alternative(html_content, "text/html")
     email.send(fail_silently=False)
 
-    return redirect('display-reservations-list')
+    return redirect('close-tab')
 
 
 def refuse_reservation(request, id):
@@ -423,7 +429,7 @@ def refuse_reservation_confirmed(request, id):
     email.attach_alternative(html_content, "text/html")
     email.send(fail_silently=True)
 
-    return redirect('display-reservations-list')
+    return redirect('close-tab')
 
 
 def display_accepted_reservations(request):
@@ -484,7 +490,7 @@ def edit_client(request, id):
             client.warning = new_warning
             client.save()
 
-            return redirect('display-reservations-list')
+            return redirect('close-tab')
         
         else:
             return render(request,

@@ -21,6 +21,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('', views.redirect_home, name='redirect-home'),
+
+    path('close_tab', views.close_tab, name='close-tab'),
     
     path('home/', views.home, name='home'),
 

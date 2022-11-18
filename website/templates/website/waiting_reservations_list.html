@@ -51,30 +51,30 @@
                                 {% if client.warning == True %}
                         
                                     <div class="reservation_line_warning">
-                                        <a class="details_button" href="{% url 'display-details' reservation.id %}">
+                                        <a class="details_button" href="{% url 'display-details' reservation.id %}" target="_blank">
                                             <p class="info">{{ reservation.name }}</p>
                                             <p class="info">{{ reservation.resa_date }}</p>
                                             <p class="info">{{ reservation.get_hour_display }}</p>
                                             <p class="info">{{ reservation.nb_people }}</p>
                                         </a>
                                         <div class="decision_buttons">
-                                            <a class="accept_button" href="{% url 'accept-reservation' reservation.id %}">Accepter</a>
-                                            <a class="refuse_button" href="{% url 'refuse-reservation' reservation.id %}">Refuser</a>
+                                            <a class="accept_button" href="{% url 'accept-reservation' reservation.id %}" target="_blank">Accepter</a>
+                                            <a class="refuse_button" href="{% url 'refuse-reservation' reservation.id %}" target="_blank">Refuser</a>
                                         </div>
                                     </div>
 
                                 {% else %}
                         
                                     <div class="reservation_line">
-                                        <a class="details_button" href="{% url 'display-details' reservation.id %}">
+                                        <a class="details_button" href="{% url 'display-details' reservation.id %}" target="_blank">
                                             <p class="info">{{ reservation.name }}</p>
                                             <p class="info">{{ reservation.resa_date }}</p>
                                             <p class="info">{{ reservation.get_hour_display }}</p>
                                             <p class="info">{{ reservation.nb_people }}</p>
                                         </a>
                                         <div class="decision_buttons">
-                                            <a class="accept_button" href="{% url 'accept-reservation' reservation.id %}">Accepter</a>
-                                            <a class="refuse_button" href="{% url 'refuse-reservation' reservation.id %}">Refuser</a>
+                                            <a class="accept_button" href="{% url 'accept-reservation' reservation.id %}" target="_blank">Accepter</a>
+                                            <a class="refuse_button" href="{% url 'refuse-reservation' reservation.id %}" target="_blank">Refuser</a>
                                         </div>
                                     </div>
                                 
