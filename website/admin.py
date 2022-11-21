@@ -1,5 +1,5 @@
 from django.contrib import admin
-from website.models import Reservation, Client, Holidays, FullService
+from website.models import Reservation, Client, Holidays, FullService, MailError
 
 class ReservationAdmin(admin.ModelAdmin):
 	list_display = ('name', 'nb_people')
@@ -13,9 +13,12 @@ class HolidaysAdmin(admin.ModelAdmin):
 class FullServiceAdmin(admin.ModelAdmin):
 	list_display = ('date', 'meal_type')
 
+class MailErrorAdmin(admin.ModelAdmin):
+	list_display = ('name', 'receptor', 'hour', 'date', 'nb_people')
+
 admin.site.register(Reservation, ReservationAdmin)
 admin.site.register(Client, ClientAdmin)
 admin.site.register(Holidays, HolidaysAdmin)
 admin.site.register(FullService, FullServiceAdmin)
-
+admin.site.register(MailError, MailErrorAdmin)
 

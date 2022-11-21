@@ -5,7 +5,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from website.forms import LoginForm, ReservationForm, EditClientForm, HolidaysForm, FullServiceForm, FiltersForm
-from website.models import Reservation, Client, Holidays, FullService
+from website.models import Reservation, Client, Holidays, FullService, MailError
 from django.core.mail import send_mail
 from django.conf import settings
 
@@ -196,7 +196,20 @@ def make_reservation(request):
                 )
 
                 email.attach_alternative(html_content, "text/html")
-                email.send(fail_silently=False)
+                
+                try:
+                    email.send(fail_silently=False)
+                except:
+                    new_error = MailError()
+                    
+                    new_error.name = name
+                    new_error.receptor = mail
+                    new_error.hour = hour
+                    new_error.date = date_form
+                    new_error.nb_people = nb_people
+                    new_error.message_type = 'Accusé de réception'
+
+                    new_error.save()
                 
                 try:                                                                # si le client est déjà venu on ajoute une reservation
                     client = Client.objects.get(phone_number=phone_num)
@@ -386,7 +399,20 @@ def accept_reservation_confirmed(request, id):
     )
 
     email.attach_alternative(html_content, "text/html")
-    email.send(fail_silently=False)
+
+    try:
+        email.send(fail_silently=False)
+    except:
+        new_error = MailError()
+        
+        new_error.name = name
+        new_error.receptor = mail
+        new_error.hour = hour
+        new_error.date = date_form
+        new_error.nb_people = nb_people
+        new_error.message_type = 'Confirmation de la résa'
+
+        new_error.save()
 
     return redirect('close-tab')
 
@@ -427,7 +453,20 @@ def refuse_reservation_confirmed(request, id):
     )
 
     email.attach_alternative(html_content, "text/html")
-    email.send(fail_silently=True)
+
+    try:
+        email.send(fail_silently=False)
+    except:
+        new_error = MailError()
+        
+        new_error.name = name
+        new_error.receptor = mail
+        new_error.hour = hour
+        new_error.date = date_form
+        new_error.nb_people = nb_people
+        new_error.message_type = 'Refu de la résa'
+
+        new_error.save()
 
     return redirect('close-tab')
 

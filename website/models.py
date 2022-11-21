@@ -86,3 +86,13 @@ class FullService(models.Model):
 
     date = models.fields.DateField(default = django.utils.timezone.now)
     meal_type = models.fields.CharField(max_length=1, default="M", choices=MEAL_CHOICES)
+
+
+
+class MailError(models.Model):
+    name = models.fields.CharField(default = '', max_length = 50)
+    receptor = models.fields.CharField(default = '', max_length = 100)
+    hour = models.fields.CharField(default = '', max_length = 6)
+    date = models.fields.DateField(default = '')
+    nb_people = models.fields.IntegerField(default = 0)
+    message_type = models.fields.CharField(default = '', max_length = 30)
