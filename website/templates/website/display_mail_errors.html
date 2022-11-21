@@ -37,6 +37,7 @@
 						<p class="error_info">{{ error.hour }}</p>
 						<p class="error_info">{{ error.date }}</p>
 						<p class="error_info">{{ error.message_type }}</p>
+						<a class="treated_button" href="{% url 'treat-mail-error' {{ error.id }} %}" target="_blank">Erreur traitée</a>
 					</div>
 				{% endfor %}
 

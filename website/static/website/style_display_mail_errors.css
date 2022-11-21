@@ -76,6 +76,8 @@ body {
 
 	border: solid #060b13 1px;
 
+	align-items: center;
+
 	flex-wrap: wrap;
 }
 
@@ -85,6 +87,35 @@ body {
 	min-width: fit-content;
 	margin-left: 10px;
 }
+
+
+.error_line:hover {
+	background-color: #060b13;
+	color: white;
+}
+
+
+.treated_button {
+	display: flex;
+	align-items: center;
+	text-align: center;
+	padding: 0 6px;
+	margin:0;
+	height: 60%;
+	text-decoration: none;
+	color: white;
+	background-color: #060b13;
+	border: solid;
+	float: right;
+	margin-right: 5px;
+}
+
+
+.treated_button:hover {
+	background-color: white;
+	color: #060b13;
+}
+
 
 .no_error_line {
 	display: flex;
