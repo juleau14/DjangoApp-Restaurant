@@ -714,3 +714,13 @@ def add_full_service(request):
         'website/add_full_service.html',
         {'form': form, 'message': ""},
         )
+
+
+
+def display_mail_errors(request):
+    all_errors = MailError.objects.all()
+
+    return render(request,
+        'website/display_mail_errors.html',
+        {'all_erros': all_errors},
+        )
