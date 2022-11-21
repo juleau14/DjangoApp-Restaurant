@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href=" {% static 'website/style_display_mail_errors.css' %}">
+	<title>L'air de famille</title>
+</head>
+<body>
+	<div class="top">
+		<h1 class="title">Erreurs mail</h1>
+	</div>
+
+	<div class="tab_div">
+		
+		<div class="tab">
+			<div class="legend_line">
+				<p class="legend_info">Nom</p>
+				<p class="legend_info">Destinataire</p>
+				<p class="legend_info">Heure</p>
+				<p class="legend_info">Date</p>
+				<p class="legend_info">Sujet</p>
+			</div>
+
+			{% if message != "" %}
+				<div class="no_error_line">
+					<p class="no_error_message">{{ message }}</p>
+				</div>
+
+			{% else %}
+				{% for error in all_errors %}
+					<div class="error_line">
+						<p class="error_info">{{ error.name }}</p>
+						<p class="error_info">{{ error.receptor }}</p>
+						<p class="error_info">{{ error.hour }}</p>
+						<p class="error_info">{{ error.date }}</p>
+						<p class="error_info">{{ error.message_type }}</p>
+					</div>
+				{% endfor %}
+
+			{% endif %}
+		</div>
+	
+	</div>
+</body>
+</html>

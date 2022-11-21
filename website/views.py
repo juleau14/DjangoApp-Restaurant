@@ -720,7 +720,15 @@ def add_full_service(request):
 def display_mail_errors(request):
     all_errors = MailError.objects.all()
 
+    if len(all_errors) == 0:
+
+        message = "Aucune erreur à déplorer."
+
+    else:
+        message = ""
+
     return render(request,
-        'website/display_mail_errors.html',
-        {'all_erros': all_errors},
-        )
+            'website/display_mail_errors.html',
+            {'all_errors': all_errors,
+            'message': message},
+            )
