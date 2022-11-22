@@ -52,7 +52,7 @@
                                 {% if client.warning == True %}
                         
                                     <div class="reservation_line_warning">
-                                        <a class="details_button" href="{% url 'display-details' reservation.id %}" target="_blank">
+                                        <a class="details_button" href="{% url 'display-details' reservation.id %}">
                                             <p class="info">{{ reservation.name }}</p>
                                             <p class="info">{{ reservation.resa_date }}</p>
                                             <p class="info">{{ reservation.get_hour_display }}</p>
@@ -67,7 +67,7 @@
                                 {% else %}
                         
                                     <div class="reservation_line">
-                                        <a class="details_button" href="{% url 'display-details' reservation.id %}" target="_blank">
+                                        <a class="details_button" href="{% url 'display-details' reservation.id %}">
                                             <p class="info">{{ reservation.name }}</p>
                                             <p class="info">{{ reservation.resa_date }}</p>
                                             <p class="info">{{ reservation.get_hour_display }}</p>
@@ -98,6 +98,9 @@
             if (document.visibilityState == 'visible') {
                 window.location.reload()
             }
+        })
+        window.addEventListener("onpageshow", function() {
+            window.location.reload();
         })
     </script>
 </html>

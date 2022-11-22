@@ -10,7 +10,7 @@
 </head>
 <body>
 	<div class="top">
-			<a class="back_button" href="{% url 'close-tab' %}">Retour</a>
+			<button class="back_button">Retour</button>
 			<h1 class="title">Anciennes erreurs mail</h1>
 	</div>
 
@@ -46,4 +46,11 @@
 	
 	</div>
 </body>
+<script type="text/javascript">
+        const back_button = document.querySelector(".back_button");
+
+        back_button.addEventListener("click", function() {
+            window.history.back();
+        })
+    </script>
 </html>

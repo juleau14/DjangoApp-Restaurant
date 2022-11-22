@@ -8,7 +8,7 @@
         <link rel="shortcut icon" href="{% static 'website/media/favicon.ico' %}" type="image/x-icon">
     </head>
     <body>
-        <a class="back_button" href="{% url 'close-tab' %}">Retour</a>
+        <button class="back_button">Retour</button>
         
         <div class="top">
             <h1 class="title">Détails de la réservation</h1>
@@ -33,4 +33,11 @@
             {% endif %}
         </ul>
     </body>
+    <script type="text/javascript">
+        const back_button = document.querySelector(".back_button");
+
+        back_button.addEventListener("click", function() {
+            window.history.back();
+        })
+    </script>
 </html>

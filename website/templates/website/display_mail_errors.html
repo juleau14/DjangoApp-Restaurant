@@ -10,11 +10,11 @@
 </head>
 <body>
 	<div class="top">
-		<a class="back_button" href="{% url 'display-reservations-list' 'all' 'all' %}">Retour</a>
+		<button class="back_button">Retour</button>
 		<h1 class="title">Erreurs mail</h1>
 	</div>
 
-	<a class="old_errors_button" href="{% url 'old-mail-errors' %}" target="_blank">Anciennes erreurs</a>
+	<a class="old_errors_button" href="{% url 'old-mail-errors' %}">Anciennes erreurs</a>
 
 	<div class="tab_div">
 		
@@ -52,10 +52,10 @@
 	</div>
 </body>
     <script type="text/javascript">
-        document.addEventListener("visibilitychange", function() {
-            if (document.visibilityState == 'visible') {
-                window.location.reload()
-            }
+        const back_button = document.querySelector(".back_button");
+
+        back_button.addEventListener("click", function() {
+            window.history.back();
         })
     </script>
 </html>
