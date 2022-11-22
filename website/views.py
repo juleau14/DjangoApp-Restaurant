@@ -309,55 +309,77 @@ def logout_page(request):
 
 
 @login_required()
-def display_reservations_list(request):
-    Clients = Client.objects.all()
+
+
+def display_reservations_list(request, date, meal):
+    
+    all_clients = Client.objects.all()
+
     if request.method == 'POST':
         form = FiltersForm(request.POST)
-        
+
         if form.is_valid():
-            date = form.cleaned_data['date']
-            meal_type = form.cleaned_data['meal_type']
-            all_reservations = Reservation.objects.all()
-            filtered_reservations = []
-            
-            for reservation in all_reservations:
-                if meal_type == "A":
-                    if reservation.resa_date == date and reservation.accepted == '0':
-                        filtered_reservations.append(reservation)
-                else:
-                    if reservation.resa_date == date and reservation.hour[0] == meal_type and reservation.accepted == '0':
-                        filtered_reservations.append(reservation)
+            filtered_meal = form.cleaned_data['meal_type']
+            filtered_date = form.cleaned_data['date']
+            print(filtered_date, filtered_meal)
 
-            print(filtered_reservations)
+            return redirect('display-reservations-list', {'date': filtered_date, 'meal': filtered_meal},
+                )
 
-            if len(filtered_reservations) == 0:
-                message = "Aucune réservation à afficher."
-            else:
-                message = ""
-
-            return render(request,
-            'website/waiting_reservations_list.html',
-            {'reservations': filtered_reservations, 'clients': Clients, 'message': message, 'form': form},
-            )
-        
         else:
-            return render(request,
-            'website/waiting_reservations_list.html',
-            {'reservations': filtered_reservations,'clients': Clients, 'message': message, 'form': form},
-            )
-    
+            return redirect('display-reservations-list', {'date': 'all', 'meal': 'all'},
+                )
+
     else:
+        all_reservations = Reservation.objects.all()
         form = FiltersForm()
-        all_reservations = Reservation.objects.filter(accepted='0')
-        if len(all_reservations) == 0:
-            message = "Aucune réservation à afficher."
-        else:
-            message = ""
+        
+        string_date = str(date)
+        
+        day = int(string_date[0] + string_date[1])
+        month = int(string_date[3] + string_date[4])
+        year = int(string_date[6] + string_date[7] + string_date[8] + string_date[9])
 
-        return render(request,
-        'website/waiting_reservations_list.html',
-        {'reservations': all_reservations, 'clients': Clients, 'message': message, 'form': form},
-        )
+        date_type = datetime.date(year, month, day)
+
+        if date == 'all' and meal == 'all':
+            return render(request,
+                'website/waiting_reservations_list.html',
+                {'reservations': all_reservations, 'clients': all_clients, 'form': form},
+                )
+
+        elif date == 'all':
+            filtered_reservations = []
+            for reservation in all_reservations:
+                if reservation.hour[0] == meal:
+                    filtered_reservations.append(reservation)
+
+            return render(request,
+                'website/waiting_reservations_list.html',
+                {'reservations': filtered_reservations, 'clients': all_clients, 'form': form},
+                )
+
+        elif meal == 'all':
+            filtered_reservations = []
+            for reservation in all_reservations:
+                if reservation.date == date:
+                    filtered_reservations.append(reservation)
+
+            return render(request,
+                'website/waiting_reservations_list.html',
+                {'reservations': filtered_reservations, 'clients': all_clients, 'form': form},
+                )
+
+        else:
+            filtered_reservations = []
+            for reservation in all_reservations:
+                if reservation.hour[0] == meal and reservation.date == date:
+                    filtered_reservations.append(reservation)
+
+            return render(request,
+                'website/waiting_reservations_list.html',
+                {'reservations': filtered_reservations, 'clients': all_clients, 'form': form},
+                )
 
 
 def accept_reservation(request, id):
