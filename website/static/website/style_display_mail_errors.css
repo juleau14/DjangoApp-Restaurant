@@ -117,19 +117,22 @@ body {
 .legend_line {
 	display: flex;
 	flex-direction: row;
-
 	flex-wrap: wrap;
 
 	background-color: #060b13;
 
 	color: white;
+
+	padding: 10px 0; 
 }
 
 
 .legend_info {
-	width: 15%;
+	width: 180px;
 	min-width: fit-content;
 	margin-left: 10px;
+	margin-top: 2px;
+	margin-bottom: 2px;
 }
 
 
@@ -142,13 +145,17 @@ body {
 	align-items: center;
 
 	flex-wrap: wrap;
+
+	padding: 10px 0;
 }
 
 
 .error_info {
-	width: 15%;
+	width: 180px;
 	min-width: fit-content;
 	margin-left: 10px;
+	margin-top: 2px;
+	margin-bottom: 2px;
 }
 
 
@@ -163,14 +170,13 @@ body {
 	align-items: center;
 	text-align: center;
 	padding: 0 6px;
-	margin:0;
-	height: 60%;
+	height: 30px;
 	text-decoration: none;
 	color: white;
 	background-color: #060b13;
 	border: solid;
-	float: right;
-	margin-right: 5px;
+
+	margin-left: 50px;
 }
 
 

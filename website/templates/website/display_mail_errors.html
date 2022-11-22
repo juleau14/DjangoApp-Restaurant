@@ -24,6 +24,7 @@
 				<p class="legend_info">Destinataire</p>
 				<p class="legend_info">Heure</p>
 				<p class="legend_info">Date</p>
+				<p class="legend_info">Nb. couverts</p>
 				<p class="legend_info">Sujet</p>
 			</div>
 
@@ -39,6 +40,7 @@
 						<p class="error_info">{{ error.receptor }}</p>
 						<p class="error_info">{{ error.hour }}</p>
 						<p class="error_info">{{ error.date }}</p>
+						<p class="error_info">{{ error.nb_people }}</p>
 						<p class="error_info">{{ error.message_type }}</p>
 						<a class="treated_button" href="{% url 'treat-mail-error' error.id %}" target="_blank">Erreur traitée</a>
 					</div>
