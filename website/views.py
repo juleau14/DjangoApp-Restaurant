@@ -718,7 +718,7 @@ def add_full_service(request):
 
 
 def display_mail_errors(request):
-    all_errors = MailError.objects.all()
+    all_errors = MailError.objects.filter(treated=False)
 
     if len(all_errors) == 0:
 
@@ -732,3 +732,35 @@ def display_mail_errors(request):
             {'all_errors': all_errors,
             'message': message},
             )
+
+
+def treat_mail_error(request, id):
+
+    return render(request,
+        'website/treat_mail_error.html',
+        {'id': id},
+        )
+
+
+def mail_error_solved(request, id):
+
+    error = MailError.objects.get(id=id)
+    error.treated = True
+    error.save()
+
+    return redirect('close-tab')
+
+
+def display_old_mail_errors(request):
+    all_errors = MailError.objects.filter(treated=True)
+
+    if len(all_errors) == 0:
+        message = "Aucune erreur à déplorer"
+
+    else:
+        message = ""
+
+    return render(request,
+        'website/display_old_mail_errors.html',
+        {'all_errors': all_errors, 'message': message},
+        )

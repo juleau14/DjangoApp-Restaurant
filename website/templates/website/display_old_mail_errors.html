@@ -5,16 +5,14 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href=" {% static 'website/style_display_mail_errors.css' %}">
 	<title>L'air de famille</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'website/style_display_old_mail_errors.css' %}">
 </head>
 <body>
 	<div class="top">
-		<a class="back_button" href="{% url 'display-reservations-list' %}">Retour</a>
-		<h1 class="title">Erreurs mail</h1>
+			<a class="back_button" href="{% url 'close-tab' %}">Retour</a>
+			<h1 class="title">Anciennes erreurs mail</h1>
 	</div>
-
-	<a class="old_errors_button" href="{% url 'old-mail-errors' %}" target="_blank">Anciennes erreurs</a>
 
 	<div class="tab_div">
 		
@@ -40,7 +38,6 @@
 						<p class="error_info">{{ error.hour }}</p>
 						<p class="error_info">{{ error.date }}</p>
 						<p class="error_info">{{ error.message_type }}</p>
-						<a class="treated_button" href="{% url 'treat-mail-error' error.id %}" target="_blank">Erreur traitée</a>
 					</div>
 				{% endfor %}
 
@@ -49,11 +46,4 @@
 	
 	</div>
 </body>
-    <script type="text/javascript">
-        document.addEventListener("visibilitychange", function() {
-            if (document.visibilityState == 'visible') {
-                window.location.reload()
-            }
-        })
-    </script>
 </html>
