@@ -44,6 +44,11 @@ urlpatterns = [
     path('manage_reservations/accepted_reservations/', views.display_accepted_reservations, name='accepted-reservations'),
     path('manage_reservations/refused_reservations/', views.display_refused_reservations, name='refused-reservations'),
     
+    path('manage_reservations/mail_errors/', views.display_mail_errors, name='mail-errors'),
+    path('manage_reservations/treat_mail_error/<int:id>/', views.treat_mail_error, name='treat-mail-error'),
+    path('manage_reservations/treat_mail_error/<int:id>/solved/', views.mail_error_solved, name='mail-error-solved'),
+    path('manage_reservations/old_mail_errors/', views.display_old_mail_errors, name='old-mail-errors'),
+
     path('manage_clients/', views.display_clients_list, name='clients-list'),
     path('manage_clients/<int:id>/details/', views.display_client_details, name='display-client-details'),
     path('manage_clients/<int:id>/edit/', views.edit_client, name='edit-client'),

@@ -1,0 +1,21 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{% static 'website/style_treat_mail_error.css' %}">
+	<title>L'air de famille</title>
+</head>
+<body>
+	<div class=top>
+		<h1 class="title">Considérer cette erreur comme résolue ?</h1>
+	</div>
+
+	<div class="content">
+		<a class="button yes" href="{% url 'mail-error-solved' id %}">OUI</a>
+		<a class="button no" href="{% url 'close-tab' %}">NON</a>
+	</div>
+</body>
+</html>

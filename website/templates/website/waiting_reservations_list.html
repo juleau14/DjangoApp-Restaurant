@@ -19,6 +19,7 @@
             <a href="{% url 'clients-list' %}" class="nav_button">Liste des clients</a>
             <a href="{% url 'display-holidays' %}" class="nav_button">Vacances</a>
             <a href="{% url 'display-full-services' %}" class="nav_button">Services complets</a>
+            <a href="{% url 'mail-errors' %}" class="nav_button">Erreurs Mail</a>
             <a href="{% url 'logout' %}" class="nav_button">Déconnexion</a>
         </div>
 
@@ -92,4 +93,11 @@
         </div>
     
     </body>
+    <script type="text/javascript">
+        document.addEventListener("visibilitychange", function() {
+            if (document.visibilityState == 'visible') {
+                window.location.reload()
+            }
+        })
+    </script>
 </html>

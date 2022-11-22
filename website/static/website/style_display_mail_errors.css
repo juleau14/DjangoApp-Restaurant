@@ -1,0 +1,192 @@
+@font-face {
+	font-family: "main_font";
+	src:  url("fonts/Louis-George-Cafe.ttf");
+}
+
+
+body {
+	margin: 0;
+}
+
+
+.top {
+	display: flex;
+
+	width: 100%;
+	height: 12vh;
+
+	align-items: center;
+	justify-content: center;
+
+	background-color: #060b13;
+}
+
+
+.back_button {
+	position: absolute;
+	left: 0;
+	margin-left: 20px;
+
+	text-decoration: inherit;
+
+	font-family: main_font;
+	color: white;
+
+	font-weight: bolder;
+
+	display: flex;
+
+	border: solid white 2px;
+
+	justify-content: center;
+	align-items: center;
+
+	width: 100px;
+	height: 50px;
+}
+
+
+.back_button:hover {
+	background-color: white;
+	color: #060b13;
+}
+
+
+.title {
+	color: white;
+	font-family: main_font;
+}
+
+
+.old_errors_button {
+	text-decoration: inherit;
+
+	font-family: main_font;
+
+	color: #060b13;
+
+	font-weight: bolder;
+
+	display: flex;
+	align-items: center;
+	text-align: center;
+
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+
+	border: solid #060b13 2px;
+
+	justify-content: center;
+	align-items: center;
+
+	width: 200px;
+	height: 50px;
+}
+
+
+.old_errors_button:hover {
+	background-color: #060b13;
+	color: white;
+	}
+
+
+.tab_div {
+	display: flex;
+
+	justify-content: center;
+
+	width: 100%;
+}
+
+
+.tab {
+	display: flex;
+	flex-direction: column;
+
+	width: 90%;
+
+	font-family: main_font;
+
+	border: solid #060b13 3px;
+
+	margin-top: 5vh;
+}
+
+
+.legend_line {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+	background-color: #060b13;
+
+	color: white;
+
+	padding: 10px 0; 
+}
+
+
+.legend_info {
+	width: 180px;
+	min-width: fit-content;
+	margin-left: 10px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+
+
+.error_line {
+	display: flex;
+	flex-direction: row;
+
+	border: solid #060b13 1px;
+
+	align-items: center;
+
+	flex-wrap: wrap;
+
+	padding: 10px 0;
+}
+
+
+.error_info {
+	width: 180px;
+	min-width: fit-content;
+	margin-left: 10px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+
+
+.error_line:hover {
+	background-color: #060b13;
+	color: white;
+}
+
+
+.treated_button {
+	display: flex;
+	align-items: center;
+	text-align: center;
+	padding: 0 6px;
+	height: 30px;
+	text-decoration: none;
+	color: white;
+	background-color: #060b13;
+	border: solid;
+
+	margin-left: 50px;
+}
+
+
+.treated_button:hover {
+	background-color: white;
+	color: #060b13;
+}
+
+
+.no_error_line {
+	display: flex;
+	justify-content: center;
+}

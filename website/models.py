@@ -96,3 +96,5 @@ class MailError(models.Model):
     date = models.fields.DateField(default = '')
     nb_people = models.fields.IntegerField(default = 0)
     message_type = models.fields.CharField(default = '', max_length = 30)
+
+    treated = models.fields.BooleanField(default = False)
