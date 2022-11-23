@@ -69,7 +69,7 @@ def reservation_is_too_late(meal_type, date_form): # vérifie si l'heure de rese
 def reservation_is_during_holidays(date_form):  # vérifie si la réservation tombe pendant une date de vacances
     all_holidays = Holidays.objects.all()
     for holidays in all_holidays:
-        if holidays.begin < date_form < holidays.end:
+        if holidays.begin <= date_form <= holidays.end:
             return True
     
     return False
