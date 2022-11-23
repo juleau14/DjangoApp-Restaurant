@@ -8,7 +8,7 @@
         <link rel="shortcut icon" href="{% static 'website/media/favicon.ico' %}" type="image/x-icon">
     </head>
     <body>
-        <button class="back_button">Retour</button>
+        <a class="back_button" href="{% url 'close-tab' %}">Retour</a>
         
         <div class="top">
             <h1 class="title">Détails du client</h1>
@@ -19,14 +19,7 @@
             <li class="info">Prénom : {{ client.first_name }}</li>
             <li class="info">Tél. : {{ client.phone_number }}</li>
             <li class="info">Nb. Résa : {{ client.nb_reservations }}</li>
-            <li class="info">Commentaire client :<a href="{% url 'edit-client' client.id %}" class="edit_button" target="_blank"><small>-Editer-</small></a> {{ client.comment }}</li>
+            <li class="info">Commentaire client :<a href="{% url 'edit-client' client.id %}" class="edit_button"><small>-Editer-</small></a> {{ client.comment }}</li>
         </ul>
     </body>
-    <script type="text/javascript">
-        const back_button = document.querySelector(".back_button");
-
-        back_button.addEventListener("click", function() {
-            window.history.back();
-        })
-    </script>
 </html>

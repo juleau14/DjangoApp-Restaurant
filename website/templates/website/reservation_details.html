@@ -8,7 +8,7 @@
         <link rel="shortcut icon" href="{% static 'website/media/favicon.ico' %}" type="image/x-icon">
     </head>
     <body>
-        <button class="back_button">Retour</button>
+        <a class="back_button" href="{% url 'close-tab' %}">Retour</a>
         
         <div class="top">
             <h1 class="title">Détails de la réservation</h1>
@@ -23,7 +23,7 @@
             <li class="info">Date : {{ reservation.resa_date }}</li>
             <li class="info">Heure : {{ reservation.get_hour_display }}</li>
             <li class="info">Statut : {{ reservation.get_accepted_display }}</li>
-            <li class="info">Commentaire client :<a href="{% url 'edit-client' client.id %}" target="_blank" class="edit_button">
+            <li class="info">Commentaire client :<a href="{% url 'edit-client' client.id %}" class="edit_button">
             <small>-Editer-</small></a> {{ client.comment }}</li>
             {% if reservation.accepted == '0' %}
                 <div class="buttons_div">
@@ -33,11 +33,4 @@
             {% endif %}
         </ul>
     </body>
-    <script type="text/javascript">
-        const back_button = document.querySelector(".back_button");
-
-        back_button.addEventListener("click", function() {
-            window.history.back();
-        })
-    </script>
 </html>

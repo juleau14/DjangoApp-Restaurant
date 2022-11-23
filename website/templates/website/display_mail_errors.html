@@ -52,10 +52,18 @@
 	</div>
 </body>
     <script type="text/javascript">
+        
         const back_button = document.querySelector(".back_button");
 
         back_button.addEventListener("click", function() {
             window.history.back();
         })
+        
+        document.addEventListener("visibilitychange", function() {
+            if (document.visibilityState == 'visible') {
+                window.location.reload();
+            }
+        })
+   
     </script>
 </html>
