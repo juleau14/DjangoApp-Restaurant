@@ -69,7 +69,7 @@ def reservation_is_too_late(meal_type, date_form): # vérifie si l'heure de rese
 def reservation_is_during_holidays(date_form):  # vérifie si la réservation tombe pendant une date de vacances
     all_holidays = Holidays.objects.all()
     for holidays in all_holidays:
-        if holidays.begin < date_form < holidays.end:
+        if holidays.begin <= date_form <= holidays.end:
             return True
     
     return False
@@ -170,7 +170,9 @@ def make_reservation(request):
             valid_return = reservation_is_valid(meal_type, diner_closed_days, date_form)    # valid return =True si valide ou le message d'erreur correspondant au problème
             
             if valid_return == True:                                # on test si la réservation est valide
-                form.save()                                         # si oui on la sauvegarde dans la base de données
+                instance = form.save(commit=False)                  # on créée une instance a partir du form SANS la save dans la DB
+                instance.meal_type = meal_type                      # on change le champ meal type qui est par defaut 'M'
+                instance.save()                                     # on save l'instance dans la DB
                 name = form.cleaned_data['name']                    # on récupère le nom 
                 hour = Reservation.HOUR_TRAD[form.cleaned_data['hour']]                  # on récupère l'heure de la resa
                 nb_people = form.cleaned_data['nb_people']          # on récupère le nb de personnes
@@ -271,7 +273,7 @@ def login_page(request):
             if user is not None:
                 login(request, user)
                 
-                return redirect('display-reservations-list')
+                return redirect('display-reservations-list', 'all', 'all')
             else:
                 message = 'Identifiants invalides.'
                 
@@ -309,55 +311,74 @@ def logout_page(request):
 
 
 @login_required()
-def display_reservations_list(request):
-    Clients = Client.objects.all()
+
+
+def display_reservations_list(request, url_date, url_meal):
+
     if request.method == 'POST':
         form = FiltersForm(request.POST)
         
         if form.is_valid():
-            date = form.cleaned_data['date']
             meal_type = form.cleaned_data['meal_type']
-            all_reservations = Reservation.objects.all()
-            filtered_reservations = []
             
-            for reservation in all_reservations:
-                if meal_type == "A":
-                    if reservation.resa_date == date and reservation.accepted == '0':
-                        filtered_reservations.append(reservation)
-                else:
-                    if reservation.resa_date == date and reservation.hour[0] == meal_type and reservation.accepted == '0':
-                        filtered_reservations.append(reservation)
+            if meal_type == 'A':
+                meal_type = 'all'
+            
+            date = form.cleaned_data['date']
 
-            print(filtered_reservations)
+            str_date = str(date)
 
-            if len(filtered_reservations) == 0:
-                message = "Aucune réservation à afficher."
-            else:
-                message = ""
+            str_year = str_date[0] + str_date[1] + str_date[2] + str_date[3]
+            str_month = str_date[5] + str_date[6]
+            str_day = str_date[8] + str_date[9]
 
-            return render(request,
-            'website/waiting_reservations_list.html',
-            {'reservations': filtered_reservations, 'clients': Clients, 'message': message, 'form': form},
-            )
-        
+            correct_date = str_day + "-" + str_month + "-" + str_year
+
+            return redirect('/manage_reservations/' + correct_date + '/' + meal_type + '/')
+
         else:
-            return render(request,
-            'website/waiting_reservations_list.html',
-            {'reservations': filtered_reservations,'clients': Clients, 'message': message, 'form': form},
-            )
-    
+            
+            return redirect('/manage_reservations/all/all/')
+
     else:
+
         form = FiltersForm()
-        all_reservations = Reservation.objects.filter(accepted='0')
-        if len(all_reservations) == 0:
-            message = "Aucune réservation à afficher."
+        all_clients = Client.objects.all()
+
+        if url_meal == 'all' and url_date == 'all':
+            
+            filtered_reservations = Reservation.objects.filter(accepted='0')
+
+        elif url_date == 'all':
+            
+            filtered_reservations = Reservation.objects.filter(meal_type=url_meal)
+
+        else:           # we have to reformate url date
+            
+            int_day = int(url_date[0] + url_date[1])
+            int_month = int(url_date[3] + url_date[4])
+            int_year = int(url_date[6] + url_date[7] + url_date[8] + url_date[9])
+
+            correct_date = datetime.date(int_year, int_month, int_day)
+
+            if url_meal == 'all':
+                
+                filtered_reservations = Reservation.objects.filter(resa_date=correct_date)
+
+            else:
+                filtered_reservations = Reservation.objects.filter(resa_date=correct_date, meal_type=url_meal)
+
+        
+        if len(filtered_reservations) == 0:
+            message = "Aucune réservation à afficher"
         else:
-            message = ""
+             message = ""
 
         return render(request,
-        'website/waiting_reservations_list.html',
-        {'reservations': all_reservations, 'clients': Clients, 'message': message, 'form': form},
-        )
+            'website/waiting_reservations_list.html',
+            {'clients': all_clients, 'reservations': filtered_reservations, 'form': form, 'message': message, 'date_filter': url_date, 'meal_filter': url_meal},
+            )
+
 
 
 def accept_reservation(request, id):

@@ -34,7 +34,7 @@
         </div>
 
         <div class="reset_filters_button_div">
-            <a class="reset_filters_button" href="{% url 'display-reservations-list' %}">Supprimer les filtres</a>
+            <a class="reset_filters_button" href="{% url 'display-reservations-list' 'all' 'all' %}">Supprimer les filtres</a>
         </div>
         
         <div class="full_list_div">
@@ -93,11 +93,13 @@
         </div>
     
     </body>
+
     <script type="text/javascript">
         document.addEventListener("visibilitychange", function() {
             if (document.visibilityState == 'visible') {
-                window.location.reload()
+                window.location.reload();
             }
         })
     </script>
+
 </html>

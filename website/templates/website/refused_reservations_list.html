@@ -9,7 +9,7 @@
     </head>
     <body>
         
-        <a href="{% url 'display-reservations-list' %}" class="back_button">Retour</a>
+        <button class="back_button">Retour</button>        
         
         <div class="top">
             <h1 class="title">Réservations refusées</h1>
@@ -26,7 +26,7 @@
             {% for reservation in reservations %}
             
             <div class="reservation_line">
-                <a class="details_button" href="{% url 'display-details' reservation.id %}">
+                <a class="details_button" href="{% url 'display-details' reservation.id %}" target="_blank">
                     <p class="info">{{ reservation.name }}</p>
                     <p class="info">{{ reservation.resa_date }}</p>
                     <p class="info">{{ reservation.get_hour_display }}</p>
@@ -43,4 +43,11 @@
             {% endif %}
     </div>
     </body>
+    <script type="text/javascript">
+        const back_button = document.querySelector(".back_button");
+
+        back_button.addEventListener("click", function() {
+            window.history.back();
+        })
+    </script>
 </html>

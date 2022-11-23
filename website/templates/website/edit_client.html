@@ -9,7 +9,7 @@
         <link rel="shortcut icon" href="{% static 'website/media/favicon.ico' %}" type="image/x-icon">
     </head>
     <body>
-        <a href="{% url 'close-tab' %}" class="back_button">Retour</a>
+        <button class="back_button">Retour</button>
         
         <div class="top">
             <h1 class="title">Edition du client</h1>
@@ -22,5 +22,11 @@
             </form>
         </div>
     </body>
-    <script type="text/javascript" src="{% static 'website/scripts/edit_client_script.js' %}"></script>
+    <script type="text/javascript">
+        const back_button = document.querySelector(".back_button");
+
+        back_button.addEventListener("click", function() {
+            window.history.back();
+        })
+    </script>
 </html>

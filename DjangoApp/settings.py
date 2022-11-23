@@ -132,7 +132,7 @@ EMAIL_HOST = 'smtp.ionos.fr'
 EMAIL_PORT = 465
 # EMAIL_USE_TLS = True
 EMAIL_USE_SSL = True
-EMAIL_HOST_USER = 'areservation@airdefamilletoulouse.fr'
+EMAIL_HOST_USER = 'reservation@airdefamilletoulouse.fr'
 EMAIL_HOST_PASSWORD = 'JuleauChalande@10108'
 # EMAIL_FILE_PATH = 'website/mails_files/' # change this to a proper location
 

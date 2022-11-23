@@ -31,6 +31,11 @@ class Reservation(models.Model):
         ('D4', '20:45'),
     ]
 
+    MEAL_CHOICES = [
+        ('M', 'Midi'),
+        ('D', 'Diner'),
+        ]
+
     HOUR_TRAD = {
         'M1': '12:00',
         'M2': '12:15',
@@ -56,6 +61,8 @@ class Reservation(models.Model):
     nb_people = models.fields.CharField(max_length=2, default=1, choices=NB_PEOPLE_CHOICES)
     resa_date = models.fields.DateField(default=django.utils.timezone.now)
     hour = models.fields.CharField(max_length=2, choices=HOUR_CHOICES)
+
+    meal_type = models.fields.CharField(max_length=1, choices=MEAL_CHOICES, default='M')
 
     accepted = models.fields.CharField(max_length=1, choices=STATE_CHOICES, default='0') # 0 en attente / 1 acceptée / 2 refusée
 

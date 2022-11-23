@@ -32,22 +32,22 @@ urlpatterns = [
     path('reservation/', views.make_reservation, name='reservation-page'),
     path('reservation/confirmation/<str:mail>/', views.reservation_confirmated, name='confirmation-page'),
     
-    path('manage_reservations/', views.display_reservations_list, name='display-reservations-list'),
-    path('manage_reservations/<int:id>/details/', views.display_reservation_details, name='display-details'),
+    path('manage_reservations/<str:url_date>/<str:url_meal>/', views.display_reservations_list, name='display-reservations-list'),
+    path('manage_reservations/infos/<int:id>/details/', views.display_reservation_details, name='display-details'),
     
-    path('manage_reservations/<int:id>/accept/', views.accept_reservation, name='accept-reservation'),
-    path('manage_reservations/<int:id>/accept/confirmed/', views.accept_reservation_confirmed, name='accept-reservation-confirmed'),
+    path('manage_reservations/treat/<int:id>/accept/', views.accept_reservation, name='accept-reservation'),
+    path('manage_reservations/treat/<int:id>/accept/confirmed/', views.accept_reservation_confirmed, name='accept-reservation-confirmed'),
     
-    path('manage_reservations/<int:id>/refuse/', views.refuse_reservation, name='refuse-reservation'),
-    path('manage_reservations/<int:id>/refuse/confirmed/', views.refuse_reservation_confirmed, name='refuse-reservation-confirmed'),
+    path('manage_reservations/treat/<int:id>/refuse/', views.refuse_reservation, name='refuse-reservation'),
+    path('manage_reservations/treat/<int:id>/refuse/confirmed/', views.refuse_reservation_confirmed, name='refuse-reservation-confirmed'),
     
     path('manage_reservations/accepted_reservations/', views.display_accepted_reservations, name='accepted-reservations'),
     path('manage_reservations/refused_reservations/', views.display_refused_reservations, name='refused-reservations'),
     
-    path('manage_reservations/mail_errors/', views.display_mail_errors, name='mail-errors'),
-    path('manage_reservations/treat_mail_error/<int:id>/', views.treat_mail_error, name='treat-mail-error'),
-    path('manage_reservations/treat_mail_error/<int:id>/solved/', views.mail_error_solved, name='mail-error-solved'),
-    path('manage_reservations/old_mail_errors/', views.display_old_mail_errors, name='old-mail-errors'),
+    path('manage_mails/mail_errors/', views.display_mail_errors, name='mail-errors'),
+    path('manage_mails/treat_mail_error/<int:id>/', views.treat_mail_error, name='treat-mail-error'),
+    path('manage_mails/treat_mail_error/<int:id>/solved/', views.mail_error_solved, name='mail-error-solved'),
+    path('manage_mails/old_mail_errors/', views.display_old_mail_errors, name='old-mail-errors'),
 
     path('manage_clients/', views.display_clients_list, name='clients-list'),
     path('manage_clients/<int:id>/details/', views.display_client_details, name='display-client-details'),
