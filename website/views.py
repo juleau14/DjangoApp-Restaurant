@@ -84,8 +84,8 @@ def reservation_is_on_full_service(date_form, meal_type):           # vérifie s
     return False
 
 def reservation_is_valid(meal_type, diner_closed_days, date_form):      # vérifie si la réservation est valide pour le restaurant, si non, retourne le message d'erreur correspondant au problème
-    wrong_schedule_msg = "Désolé, votre demande de réservation ne correspond pas à nos horaires et/ou jours d ouverture."
-    unexisting_date_msg = "Désolé, la date entrée n est pas valide."
+    wrong_schedule_msg = "Désolé, votre demande de réservation ne correspond pas à nos horaires et/ou jours d\'ouverture."
+    unexisting_date_msg = "Désolé, la date entrée n\'est pas valide."
     too_late_msg = "Désolé, il est trop tard pour réserver sur ce créneau horaire."
     holidays_msg = "Désolé, le restaurant sera en congées pendant cette période."
     full_service_msg = "Désolé, ce service est complet."
