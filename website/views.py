@@ -97,6 +97,9 @@ def reservation_is_valid(meal_type, diner_closed_days, date_form):      # vérif
 
     if date_is_past(date_form):                 # la date est passée
         return unexisting_date_msg
+
+    elif reservation_is_during_holidays(date_form):                 # la réservation tombe pendant une période de vacance
+        return holidays_msg
     
     elif day_is_monday_or_sunday(week_day):             # le jour tombe lundi ou dimanche
         return wrong_schedule_msg
@@ -106,9 +109,6 @@ def reservation_is_valid(meal_type, diner_closed_days, date_form):      # vérif
     
     elif reservation_is_too_late(meal_type, date_form):                    # la reservation est une moins d'une heure avant le service
         return too_late_msg
-
-    elif reservation_is_during_holidays(date_form):                 # la réservation tombe pendant une période de vacance
-        return holidays_msg
 
     elif reservation_is_on_full_service(date_form, meal_type):      # la réservation tombe pendant un service complet 
         return full_service_msg
