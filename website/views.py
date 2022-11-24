@@ -351,7 +351,7 @@ def display_reservations_list(request, url_date, url_meal):
 
         elif url_date == 'all':
             
-            filtered_reservations = Reservation.objects.filter(meal_type=url_meal)
+            filtered_reservations = Reservation.objects.filter(meal_type=url_meal, accepted='0')
 
         else:           # we have to reformate url date
             
@@ -363,10 +363,10 @@ def display_reservations_list(request, url_date, url_meal):
 
             if url_meal == 'all':
                 
-                filtered_reservations = Reservation.objects.filter(resa_date=correct_date)
+                filtered_reservations = Reservation.objects.filter(resa_date=correct_date, accepted='0')
 
             else:
-                filtered_reservations = Reservation.objects.filter(resa_date=correct_date, meal_type=url_meal)
+                filtered_reservations = Reservation.objects.filter(resa_date=correct_date, meal_type=url_meal, accepted='0')
 
         
         if len(filtered_reservations) == 0:
@@ -784,4 +784,27 @@ def display_old_mail_errors(request):
     return render(request,
         'website/display_old_mail_errors.html',
         {'all_errors': all_errors, 'message': message},
+        )
+
+
+def model_error_mail(request, id):
+    error = MailError.objects.get(id=id)
+    if error.message_type == 'Accusé de réception':
+        subject = 'recept'
+
+    elif error.message_type == 'Confirmation de la résa':
+        subject = 'confirmation'
+
+    else:
+        subject = 'denied'
+
+    name = error.name
+    date_form = translate_date(error.date)
+    nb_people = error.nb_people
+    hour = error.hour
+
+
+    return render(request,
+        'website/model_error_mail.html',
+        {'subject': subject, 'name': name, 'date_form': date_form, 'nb_people': nb_people, 'hour': hour},
         )

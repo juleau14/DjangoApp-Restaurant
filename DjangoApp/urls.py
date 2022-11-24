@@ -48,6 +48,7 @@ urlpatterns = [
     path('manage_mails/treat_mail_error/<int:id>/', views.treat_mail_error, name='treat-mail-error'),
     path('manage_mails/treat_mail_error/<int:id>/solved/', views.mail_error_solved, name='mail-error-solved'),
     path('manage_mails/old_mail_errors/', views.display_old_mail_errors, name='old-mail-errors'),
+    path('manage_mails/model/<int:id>/', views.model_error_mail, name='model-error-mail'),
 
     path('manage_clients/', views.display_clients_list, name='clients-list'),
     path('manage_clients/<int:id>/details/', views.display_client_details, name='display-client-details'),

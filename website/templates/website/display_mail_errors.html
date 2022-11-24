@@ -42,7 +42,8 @@
 						<p class="error_info">{{ error.date }}</p>
 						<p class="error_info">{{ error.nb_people }}</p>
 						<p class="error_info">{{ error.message_type }}</p>
-						<a class="treated_button" href="{% url 'treat-mail-error' error.id %}" target="_blank">Erreur traitée</a>
+						<a class="button treated" href="{% url 'treat-mail-error' error.id %}" target="_blank">Erreur traitée</a>
+						<a class="button model" href="{% url 'model-error-mail' error.id %}">Mail modèle</a>
 					</div>
 				{% endfor %}
 
@@ -51,19 +52,4 @@
 	
 	</div>
 </body>
-    <script type="text/javascript">
-        
-        const back_button = document.querySelector(".back_button");
-
-        back_button.addEventListener("click", function() {
-            window.history.back();
-        })
-        
-        document.addEventListener("visibilitychange", function() {
-            if (document.visibilityState == 'visible') {
-                window.location.reload();
-            }
-        })
-   
-    </script>
 </html>

@@ -1,0 +1,88 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>L'air de Famille</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'website/style_model_error_mail.css' %}">
+</head>
+<body>
+	<div class="top">
+		<a href="{% url 'mail-errors' %}" class="back_button">Retour</a>
+		<h1 class="title">Modèle du mail à envoyer</h1>
+	</div>
+
+	<div class="container">
+		<p class="mail">
+			
+			{% if subject == 'recept' %}
+
+				Madame, Monsieur {{ name }};<br>
+	            <br>
+	            Nous accusons réception de votre demande de réservation du {{ date_form }}  à {{ hour }} pour {{ nb_people }} personne(s).<br>
+	            <br>
+	            Nous allons traiter votre demande et vous recevrez prochainement un mail de confirmation de votre réservation.<br>
+	            <br>
+	            A très bientôt !<br>
+	            <br>
+	            Restaurant L'air de Famille<br>
+	            6 rue Jules Chalande<br> 
+	            31000 Toulouse
+
+            {% elif subject == 'confirmation' %}
+
+	            Madame, Monsieur {{ name }};<br>
+	            <br>
+	            Nous avons le plaisir de confirmer votre réservation du {{ date_form }} à {{ hour }} pour {{ nb_people }} personne(s).<br>
+	            <br>
+	            Nous nous réjouissons de votre visite et sommes à votre disposition d'ici là par téléphone au 05 67 06 54 08 pour toute demande d'information.<br>
+	            En cas d'empêchement ou de modification de votre réservation, merci de nous contacter au  05 67 06 54 08.<br>
+	            <br>
+	            À très bientôt !<br>
+	            <br>
+	            Restaurant L'air de Famille<br>
+	            6 rue Jules Chalande<br>
+	            31000 Toulouse
+
+	        {% else %}
+
+		        Madame, Monsieur {{ name }};<br>
+	            <br>
+	            Nous avons le regret de vous informer que nous ne pouvons malheureusement pas accepter votre réservation du {{ date_form }}  à {{ hour }} pour {{ nb_people }} personne(s).<br>
+	            En espérant pouvoir vous accueillir une prochaine fois, nous restons à votre disposition d'ici là par téléphone au 05 67 06 54 08 pour toute demande d'information.<br>
+	            <br>
+	            À très bientôt !<br>
+	            <br>
+	            Restaurant L'air de Famille<br>
+	            6 rue Jules Chalande<br>
+	            31000 Toulouse<br>
+
+            {% endif %}
+
+		</p>
+	</div>
+
+</body>
+<script type="text/javascript">
+	
+	const copy_button = document.querySelector(".copy_button");
+	
+	copy_button.addEventListener("onclick", function() {
+		// Get the text field
+		var mail = document.querySelector(".mail");
+
+		// Select the text field
+		mail.select();
+		mail.setSelectionRange(0, 99999); // For mobile devices
+
+		// Copy the text inside the text field
+		navigator.clipboard.writeText(mail.value);
+
+		// Alert the copied text
+		alert("Mail copié");
+	});
+
+</script>
+</html>

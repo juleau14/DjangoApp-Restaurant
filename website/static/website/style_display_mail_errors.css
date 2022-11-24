@@ -167,7 +167,7 @@ body {
 }
 
 
-.treated_button {
+.button {
 	display: flex;
 	align-items: center;
 	text-align: center;
@@ -182,7 +182,7 @@ body {
 }
 
 
-.treated_button:hover {
+.button:hover {
 	background-color: white;
 	color: #060b13;
 }
