@@ -26,7 +26,7 @@
     }
 
     to {
-        margin-left: 15%;
+        margin-left: inherit;
     }
 }
 
@@ -106,8 +106,6 @@ a {
     font-family: main_font;
     font-size: 1.5em;
     color: red;
-
-    margin-left: 15%;
 }
 
 

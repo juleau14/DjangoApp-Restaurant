@@ -9,7 +9,7 @@
     </head>
     <body>
         
-        <button class="back_button">Retour</button>        
+        <a class="back_button" href="{% url 'close-tab' %}">Retour</a>   
         
         <div class="top">
             <h1 class="title">Réservations refusées</h1>
@@ -43,11 +43,4 @@
             {% endif %}
     </div>
     </body>
-    <script type="text/javascript">
-        const back_button = document.querySelector(".back_button");
-
-        back_button.addEventListener("click", function() {
-            window.history.back();
-        })
-    </script>
 </html>
