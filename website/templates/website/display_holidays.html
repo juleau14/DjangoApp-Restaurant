@@ -9,8 +9,7 @@
     </head>
     <body>
         
-        <button class="back_button">Retour</button>
-        
+        <a class="back_button" href="{% url 'display-reservations-list' 'all' 'all' %}">Retour</a>
         <div class="top">
             <h1 class="title">Vacances</h1>
         </div>
@@ -46,11 +45,4 @@
             {% endif %}
     </div>
     </body>
-    <script type="text/javascript">
-        const back_button = document.querySelector(".back_button");
-
-        back_button.addEventListener("click", function() {
-            window.history.back();
-        })
-    </script>
 </html>
