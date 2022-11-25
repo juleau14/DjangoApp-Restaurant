@@ -9,10 +9,13 @@
     </head>
     <body>
         <a href="{% url 'home' %}"><h2 class="back_button">Retour</h2></a>
-        <div class="text">
+        <div class="container">
             <h1 class="title">DEMANDE DE RESERVATION RECUE</h1>
             <p class="info">Réservation en cours de traitement.</p>
-            <p>Un mail vous a été envoyé à l'adresse e-mail suivante : <br>{{ mail }}</p>
+            <p class="info">Un mail vous a été envoyé à l'adresse e-mail suivante : <br>{{ mail }}<br>
+                <br>
+                <span class="warning">Pensez à consulter vos spams.<br>
+                Si vous ne recevez aucun message, merci de bien vouloir nous joindre par téléphone au 05.67.06.54.08.</span></p>
         </div>
     </body>
 </html>
