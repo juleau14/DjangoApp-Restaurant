@@ -247,12 +247,12 @@ def make_reservation(request):
     else:
         form = ReservationForm()
 
-        return render(request,
-        'website/reservation.html',
-        {'form': form}
-        )
+        # return render(request,
+        # 'website/reservation.html',
+        # {'form': form}
+        # )
 
-        # return redirect('maintenance')
+        return redirect('maintenance')
 
 
 def reservation_confirmated(request, mail):
