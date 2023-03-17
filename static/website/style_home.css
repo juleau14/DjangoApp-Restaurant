@@ -1,0 +1,934 @@
+@font-face{
+    font-family:main_font;
+    src:url('fonts/Louis-George-Cafe.ttf')
+}
+
+@font-face{
+    font-family:main_light_font;
+    src:url('fonts/Louis-George-Cafe-Light.ttf')
+}
+
+@font-face{
+    font-family:lobster_font;
+    src:url('fonts/Lobster-Regular.ttf')
+}
+
+@keyframes apparition{
+    from{
+        opacity:0
+    }
+    to{
+        opacity:100%
+    }
+}
+
+@keyframes slideup{
+    from{
+        margin-top:100vh;
+        opacity:0
+    }
+    to{
+        opacity:100%
+    }
+}
+@keyframes slidedown{
+    from{
+        margin-top:0;
+        opacity:0
+    }
+    to{
+        margin-top:50vh;
+        opacity:100%
+    }
+}
+
+
+
+/* GENERAL */
+html {
+    margin:0;
+    scroll-behavior:smooth;
+}
+
+
+
+body{
+    background-image:url(media/index_background.png);
+    background-size:cover;
+    background-attachment:fixed;
+
+    margin:0;
+}
+
+
+
+a {
+    text-decoration:inherit;
+    color: inherit;
+}
+
+
+/* LOADER */
+.loader {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100vh;
+    width: 100%;
+
+    background-color: black;
+
+    z-index: 100;
+
+    transition: 1s;
+}
+
+
+
+.loading_animation {
+    width: 10vw;
+    height: 10vw;
+
+    background-color: white;
+
+    background: url(media/loader.gif);
+    background-size: cover;
+
+    transition: 1s;
+}
+
+
+
+/* TOP */
+.topnav{
+    animation-duration:1s;
+    animation-name:apparition;
+    background-color:#060b13;
+    height:100px;
+    width:100vw;
+    border-color:#fff;
+    position:fixed;
+    z-index: 2;
+}
+
+
+
+.nav.prices, .nav.contacts{
+    display:flex;
+    align-items: center;
+    float:right;
+    text-decoration:inherit;
+    color:#fff;
+    font-family:lobster_font;
+    font-weight:700;
+    font-size:1.5em;
+    height:100px;
+    padding-right:2%;
+    padding-left:2%;
+    transition:.2s;
+    background-color: #060b13;
+    border: none;
+}
+
+
+
+.nav.top img{
+    height:100px;
+    border: none;
+}
+
+
+
+.nav.top {
+    border: none;
+    height: 100px;
+    padding: 0;
+}
+
+
+
+.nav.contacts:hover, .nav.prices:hover {
+    background-color:#fff;
+    color:#000
+}
+
+
+
+.scroll_progress_bar {
+    position: fixed;
+
+    animation-duration:1s;
+    animation-name:apparition;
+
+    margin-top: 100px;
+
+    width: 0px;
+
+    height: 8px;
+
+    background-color: lightgray;
+
+    z-index: 2;
+}
+
+
+
+.open_phone_nav {
+    display: none;
+
+    background-color: #060b13;
+
+    position: fixed;
+
+    float: left;
+    margin-top: 0;
+
+    width: 70px;
+    height: 70px;
+
+    padding: 0;
+
+    justify-content: center;
+    align-items: center;
+
+    border-bottom-right-radius: 10px;
+
+    z-index: 98;
+
+    border: none;
+
+    transition: 0.5s;
+}
+
+
+.open_phone_nav img {
+    width: 80%;
+    height: 80%;
+
+    margin: 0;
+}
+
+
+.open_phone_nav:hover {
+    opacity: 0.7;
+}
+
+
+.phone_nav {
+    position: fixed;
+
+    visibility: hidden;
+
+    background-color: #060b13;
+
+    width: 100%;
+    height: 400vh;
+
+    transform: rotate(-45deg);
+
+    margin-left: -200vw;
+
+    z-index: 50;
+
+    transition: 1s;
+}
+
+
+.close_phone_nav {
+    background-color: transparent;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    border: none;
+
+    width: 70px;
+    height: 70px;
+
+    margin: 50px;
+    padding: 0;
+}
+
+
+.close_phone_nav img {
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+}
+
+
+.phone_nav_content {
+    display:  flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+    width: 60%;
+    height: 100%;
+
+}
+
+
+.phone_nav_button {
+    width: 100%;
+
+    background-color: transparent;
+    color: white;
+    font-family: main_font;
+    font-size: 3em;
+    font-weight: 900;
+
+    padding: 4vh 0;
+
+    border: none;
+}
+
+.phone_nav_button.reservation {
+    text-align: center;
+}
+
+.phone_nav_button:hover {
+    background-color: white;
+    color: #060b13;
+}
+
+
+.phone_nav_info {
+    font-family: main_font;
+    color: white;
+    font-size: 2em;
+
+    width: 100%;
+    text-align: center;
+}
+
+
+
+/* RESPONSIVE TOP */
+@media all and (max-width: 1000px) {
+    .topnav {
+        display: none;
+    }
+
+    .open_phone_nav {
+        display: flex;
+    }
+
+    .scroll_progress_bar {
+        margin-top: 0;
+        background-color: #060b13;
+    }
+}
+
+
+/* VOID  */
+.void{
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.void_top {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 70%;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.void_bot {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.schedules_div {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+    width: 80%;
+}
+
+.schedules_content {
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: main_font;
+    color: white;
+    margin-left: 10%;
+    margin-right: 10%;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+
+}
+
+.welcome_text{
+    text-align: center;
+    animation-name:slideup;
+    animation-duration:1s;
+    font-family:lobster_font;
+    color: #fff;
+    text-shadow: 2px 2px 0 #060b13;
+    font-size:4em;
+    width: 100%;
+}
+
+.reservation_button {
+    font-family: main_font;
+    font-size: 2em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: white;
+    color: #060b13;
+
+    text-align: center;
+    margin-top: 10vh;
+
+    width: 18vw;
+    height: 10vh;
+    min-width: 150px;
+    min-height: 50px;
+
+    border-radius: 10px;
+    border: solid white 3px;
+
+    transition-duration: 0s;
+}
+
+.reservation_button:hover {
+    font-weight: bolder;
+}
+
+
+@media all and (max-width: 1000px) {
+    body {
+        background-image: url(media/index_background_phone.png);
+        background-size: 100%;
+        background-attachment: inherit;
+    }
+
+    .welcome_text {
+        font-size: 100px;
+
+        color: #060b13;
+        text-shadow: 2px 2px 0 white;
+    }
+
+    .reservation_button {
+        background-color: #060b13;
+        color: white;
+        border-color: #060b13;
+
+        margin-top: 10vh;
+
+        width: 30vw;
+    }
+
+    .reservation_button:hover {
+        font-weight: bolder;
+    }
+
+    .void_top {
+        height: 50%;
+    }
+
+    .void_bot {
+        display: flex;
+        align-items: center;
+
+        height: 50%;
+    }
+
+
+    .schedules_div {
+        background-color: #060b13;
+
+        height: auto;
+    }
+
+    .schedules_content {
+        font-size: 40px;
+        padding: 30px;
+    }
+}
+
+
+@media all and (max-width: 330px) {
+    .welcome_text {
+        font-size: 40px;
+    }
+
+    .schedules_content {
+        font-size: 15px;
+    }
+}
+
+
+.low_content{
+    margin:0;
+}
+
+
+
+/* HOME TEXT  */
+.home_text_div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background-color:#1b3052;
+    text-align:center;
+}
+
+.home_text_content {
+    margin:  10vh 10%;
+}
+
+.home_text_title{
+    font-family:main_font;
+    font-weight:700;
+    font-size:2em;
+    color: white;
+}
+
+.home_text_par{
+    font-family:main_font;
+    font-weight:700;
+    font-size:1.5em;
+    color:white;
+}
+
+.home_text_signature {
+    font-family: main_font;
+    color: white;
+    float: right;
+}
+
+
+
+/* POIVRONS DIV */
+.poivrons_div {
+    background-color: white;
+    float: left;
+    
+    width: 50%;
+    height: 49vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    overflow: hidden;
+}
+
+.poivrons_content {
+    background-image: url(media/poivrons.png);
+    background-size: 100%;
+
+    width: 100%;
+    height: 100%;
+
+    transition: 0.5s;
+
+    display: flex;
+    overflow: hidden;
+}
+
+.poivrons_text {
+    color: #060b13;
+    font-family: lobster_font;
+    font-size: 2em;
+
+    backdrop-filter: blur(10px);
+
+    width: 100%;
+    height: 100%;
+    margin-top: 0;
+    margin-left: -100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    transition: 0.5s;
+}
+
+.poivrons_content:hover {
+    scale: 1.1;
+}
+
+.poivrons_content:hover .poivrons_text {
+    margin-left: 0;
+}
+
+
+
+/* CONTACTS DIV */
+.contacts_div {
+    background-color: white;
+    float: right;
+
+    width: 50%;
+    height: 49vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.contacts_content {
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-left: 100vw;
+
+    width: 80%;
+    height: 80%;
+
+    color: white;
+
+    background-color: #1b3052;
+
+    transition: 1.5s;
+}
+
+.contacts_title {
+    font-family: lobster_font;
+
+    font-size: 2em;
+}
+
+.contacts_elements {
+    list-style-type: none;
+    
+    font-family: main_font;
+    font-size: 1.5em;
+
+    text-align: center;
+}
+
+.contacts_elements li {
+    margin-top: 10%;
+}
+
+
+
+/* MAP DIV */
+.map_div {
+    background-color: white;
+    float: left;
+
+    width: 50%;
+    height: 49vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.map {
+    width: 80%;
+    height: 80%;
+
+    margin-left: -100vw;
+
+    transition: 1.5s;
+}
+
+
+
+/* MELBA DIV */
+.melba_div {
+    background-color: purple;
+    float: right;
+
+    width: 50%;
+    height: 49vw;
+
+    display: block;
+    overflow: hidden;
+}
+
+.melba_content {
+    background-image: url(media/melba.png);
+    background-size: 100%;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    transition: 0.5s;
+}
+
+.melba_text {
+    color: #060b13;
+    font-family: lobster_font;
+    font-size: 2em;
+
+    backdrop-filter: blur(10px);
+
+    width: 100%;
+    height: 100%;
+    margin-top: 0;
+    margin-left: 50vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    transition: 0.5s;
+}
+
+.melba_content:hover {
+    scale: 1.1;
+}
+
+.melba_content:hover .melba_text {
+    margin-left: 0;
+}
+
+
+
+/* MOULES DIV */
+.moules_div {
+    background-color: white;
+    float: left;
+
+    width: 50%;
+    height: 49vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.moules_content {
+    background-image: url(media/moules.png);
+    background-size: 100%;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    overflow: hidden;
+
+    transition: 0.5s;    
+}
+
+.moules_text {
+    color: #060b13;
+    font-family: lobster_font;
+    font-size: 2em;
+
+    backdrop-filter: blur(10px);
+
+    width: 100%;
+    height: 100%;
+    margin-top: 0;
+    margin-left: -100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    transition: 0.5s;
+}
+
+.moules_content:hover {
+    scale: 1.1;
+}
+
+.moules_content:hover .moules_text {
+    margin-left: 0;
+}
+
+
+
+/* PRICES DIV */
+.prices_div {
+    background-color: white;
+    float: right;
+
+    width: 50%;
+    height: 49vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.prices_content {
+    border-radius: 5%;
+
+    height: 80%;
+    width: 80%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    color:white;
+
+    background-color: #1b3052;
+
+    margin-left: 100vw;
+
+    transition: 1.5s;
+}
+
+.prices_title {
+    font-family: lobster_font;
+    font-size: 2em;
+}
+
+.prices_text {
+    font-family: main_font;
+    font-size: 1.5em;
+}
+
+
+
+/* RESPONSIVE */
+@media all and (max-width: 1000px) {
+    /* POIVRONS DIV  */
+    .poivrons_div {
+        width: 100%;
+        height: 95vw;
+    }
+
+    .poivrons_content {
+        width: 80%;
+        height: 80%; 
+    }
+
+    /* CONTACTS DIV */
+    .contacts_div {
+        width: 100%;
+        height: 95vw;
+    }
+    
+    /* MAP DIV  */
+    .map_div {
+        width: 100%;
+        height: 95vw;
+    }
+
+    /* MELBA DIV */
+    .melba_div {
+        display: none;
+    }
+
+    /* MOULES DIV */
+    .moules_div {
+        width: 100%;
+        height: 95vw;
+    }
+
+    .moules_content {
+        width: 80%;
+        height: 80%; 
+    }
+
+    /* PRICES DIV */
+    .prices_div {
+        height: 110vw;
+        width: 100%;
+    }
+}
+
+
+
+/* BOTTOM */
+.bottom_div {
+    background-color: #060b13;
+}
+
+
+
+.connection_div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 5vh;
+
+    font-family: main_font;
+    color: white;
+}
+
+
+
+
+
+.login_button {
+    float: left;
+
+    font-family: main_font;
+
+    color: white;
+}
+
+
+.logos_div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    width: 100%;
+    height: 10vh;
+
+    overflow: hidden;
+}
+
+
+.logo_link {
+    height: 80%;
+
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 3vw;
+    margin-left: -200vw;
+}
+
+
+.logo_link.facebook {
+    display: none;
+}
+
+
+.logo_img {
+    height: 100%;
+}
+
+
+ @media all and (max-width: 500px) {
+    .bottom {
+        height: 5vh;
+    }
+ }
