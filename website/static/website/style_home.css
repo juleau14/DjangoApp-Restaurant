@@ -115,7 +115,7 @@ a {
 
 
 
-.nav.prices, .nav.contacts{
+.nav.prices, .nav.contacts, .nav.reservation{
     display:flex;
     align-items: center;
     float:right;
@@ -149,7 +149,7 @@ a {
 
 
 
-.nav.contacts:hover, .nav.prices:hover {
+.nav.contacts:hover, .nav.prices:hover, .nav.reservation:hover {
     background-color:#fff;
     color:#000
 }
@@ -924,6 +924,46 @@ a {
 
 .logo_img {
     height: 100%;
+}
+
+
+.reservation_div {
+    background-color: white;
+}
+
+.reservation_title {
+    color: white;
+    font-family: main_font;
+    width: 100%;
+    background-color: #1b3052;
+    padding: 5vh 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.thefork{
+width: 100%;
+border:none;
+overflow: scroll;
+background-color: white;
+}
+/* Media queries widget */ 
+@media only screen and (max-width : 320px) { 
+    .thefork{
+    min-height: 840px;
+    }
+}
+@media only screen and (min-width : 321px) and (max-width : 516px){
+    .thefork{
+    min-height: 650px; 
+    }
+}
+@media only screen and (min-width : 517px) { 
+    .thefork{
+    min-height: 550px; 
+    }
 }
 
 

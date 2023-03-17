@@ -10,6 +10,7 @@ const pricesPhoneNavButton = document.querySelector(".phone_nav_button.prices");
 const contactsScrollButton = document.querySelector(".nav.contacts");
 const pricesScrollButton = document.querySelector(".nav.prices");
 const topScrollButton = document.querySelector(".nav.top");
+const reservationScrollButton = document.querySelector(".nav.reservation");
 
 
 function start() {
@@ -36,6 +37,7 @@ function start() {
     contactsScrollButton.addEventListener("click", scrollToContacts);
     pricesScrollButton.addEventListener("click", scrollToPrices);
     topScrollButton.addEventListener("click", scrollToTop);
+    reservationScrollButton.addEventListener("click", scrollToReservation);
 }
 
 
@@ -189,6 +191,11 @@ function scrollToPrices() {
 
 function scrollToTop() {
     window.scrollTo(0, 0);
+}
+
+function scrollToReservation() {
+    const reservationDiv = document.querySelector(".reservation_title");
+    window.scrollBy(0, reservationDiv.getBoundingClientRect().top);
 }
 
 
