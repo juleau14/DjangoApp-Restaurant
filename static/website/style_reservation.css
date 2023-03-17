@@ -1,0 +1,223 @@
+@font-face {
+	font-family: "main_font";
+	src:  url("fonts/Louis-George-Cafe.ttf");
+}
+
+@font-face {
+    font-family: "title_font";
+    src: url("fonts/Lobster-Regular.ttf");
+}
+
+@keyframes slideup {
+	from {
+		margin-top: 100vh;
+		opacity: 0%;
+	}
+
+	to {
+		margin-top: 10vh;
+		opacity: 100%;
+	}
+}
+
+@keyframes slideright {
+    from {
+        margin-left: -50%;
+    }
+
+    to {
+        margin-left: inherit;
+    }
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #060b13;
+
+    width: 100%;
+    height: 12vh;
+   
+    font-family: title_font;
+    color: white;
+    text-align: center;
+    
+    margin: 0;
+}
+
+.title {
+    margin: 0;
+}
+
+
+.back_button {
+    position: absolute;
+
+    color: white;
+    font-family: title_font;
+    font-size: 20px;
+    border: solid white 3px;
+
+    transition: 0.2s;
+
+    margin-top: 20px;
+    margin-left: 50px;
+    padding: 10px;
+}
+
+.back_button:hover {
+    color: #060b13;
+    background-color: white;
+}
+
+
+@media all and (max-width: 550px) {
+    .back_button {
+        margin-left: 25px;
+    }
+}
+
+
+.error_msg_div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 8vh;
+}
+
+.error_msg {
+    animation-name: slideright;
+    animation-duration: 1s;
+
+    font-family: main_font;
+    font-size: 1.5em;
+    color: red;
+}
+
+
+.form_div {
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+
+    padding-bottom: 10vh;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    font-family: main_font;
+
+    background-color: #060b13;
+    color: white;
+
+    padding: 50px;
+
+    width: 50vw;
+
+    font-size: 2em;
+}
+
+
+input, select {
+    float: right;
+    width: 250px;
+    height: 30px;
+
+    background-color: #060b13;
+    border: solid white 3px;
+
+    border-top: solid #060b13 3px;
+    border-bottom: solid white 3px;
+    border-left: solid #060b13 3px;
+    border-right: solid #060b13 3px;
+
+    color: white;
+
+    font-family: main_font;
+
+    transition: 0.2s;
+}
+
+input:hover, select:hover, input:focus, select:focus {
+    border: solid white 3px;
+}
+
+.send {
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input::-webkit-calendar-picker-indicator {
+    background-color: white;
+    opacity: 1;
+  }
+
+
+@media all and (max-width: 480px) {
+    input {
+        margin-top: 10vh; 
+    }
+}
+
+
+
+.bottom {
+    background-color: #060b13;
+    width: 100%;
+    padding: 15px 0;
+}
+
+.connection_button {
+    margin-left: 30px;
+
+    font-family: main_font;
+    color: white;
+
+    margin-bottom: 0;
+}
+
+@media all and (max-width: 1000px) {
+    .top {
+        height: 100px;
+    }
+
+    label {
+        margin-top: 4vh;
+    }
+
+    input, select, [type="date"] {
+        width: 90%;
+        font-size: 1em;
+        height: 3vh;
+        margin-top: 2vh;
+    }
+
+    form {
+        width: 80%;
+        font-size: 3em;
+    }
+
+    .bottom {
+        position: fixed;
+
+        bottom: 0;
+    }
+}
